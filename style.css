@@ -773,6 +773,22 @@ ul {
     gap: var(--space-xs);
 }
 
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-sm) var(--space-md);
+    background: linear-gradient(0deg, rgba(6, 11, 24, 0.9) 0%, transparent 100%);
+    color: var(--color-text-muted);
+    font-size: 0.82rem;
+    line-height: 1.4;
+}
+
+.detail-gallery-item {
+    position: relative;
+}
+
 @media (max-width: 768px) {
     .detail-hero {
         height: 300px;

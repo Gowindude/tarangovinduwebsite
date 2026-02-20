@@ -82,18 +82,56 @@ window.addEventListener('scroll', () => {
 const projects = [
     {
         id: 'project-1',
-        title: 'Project Title One',
-        subtitle: 'Category · Subcategory',
-        thumbnail: '',
-        heroImage: '',
-        description: `<p>Placeholder description for your first project. Describe the objectives, your role, tools used, and key outcomes.</p>
-    <h3>Technical Details</h3>
-    <p>Add technical details, methodologies, and results here. This full page gives you plenty of room for lengthy descriptions, equations, and analysis details.</p>
-    <h3>Results & Outcomes</h3>
-    <p>Describe the results, any findings, performance metrics, and what you learned from this project.</p>`,
+        title: 'Single-Stage Model Rocket: Design, Simulation & Flight Validation',
+        subtitle: 'Flight Dynamics · Simulation · Rapid Prototyping · Experimental Validation',
+        thumbnail: 'assets/project-1/rocket-post-launch.jpg',
+        heroImage: 'assets/project-1/rocket-post-launch.jpg',
+        description: `
+      <h3>Overview</h3>
+      <p>This project involved the full lifecycle design, simulation, manufacturing, and launch of a single-stage model rocket with a target apogee of <strong>125 ft</strong> while carrying a PerfectFlite Pnut altimeter payload. The objective was not only to reach a target altitude, but to validate how closely simulation predictions matched real-world performance.</p>
+      <p>The project combined <strong>OpenRocket</strong> aerodynamic and flight simulation, <strong>SolidWorks</strong> CAD modeling, <strong>3D printing</strong> and rapid iteration, mass property analysis and CG validation, and experimental flight testing with performance comparison.</p>
+
+      <h3>Objectives</h3>
+      <p>• Reach a target apogee of 125 ft<br>
+      • Maintain a stability margin between 1.0–2.0 calibers<br>
+      • Successfully integrate and protect an onboard altimeter<br>
+      • Compare predicted flight performance to measured flight data</p>
+
+      <h3>My Role</h3>
+      <p>I was the <strong>primary designer of the payload bay</strong> and led its development from simulation constraints to physical implementation. Responsibilities included designing and dimensioning the payload bay in SolidWorks, integrating altimeter geometry and retention constraints, iterating fit tolerances across multiple print cycles, performing mass and CG calculations to validate stability margins, and contributing to post-flight performance analysis.</p>
+
+      <h3>Simulation & Design</h3>
+      <p>The vehicle was iteratively modified in OpenRocket to approach the 125 ft target while maintaining stable flight. Design variables included nose cone geometry (ogive selected), payload bay dimensions, body tube length, fin height/count, and motor selection.</p>
+      <p>A motor trade study evaluated the <strong>1/2A3T</strong>, <strong>1/2A6-2</strong>, and <strong>A8-3</strong>. The 1/2A6-2 was selected based on predicted apogee and stability tradeoffs.</p>
+      <p><strong>Final simulated performance:</strong> Predicted apogee ~117 ft | Stability margin: 1.77 calibers</p>
+
+      <h3>Vehicle Configuration</h3>
+      <p>Total height: 28 cm | Payload bay: 21 mm ID, 1.2 mm wall thickness | 3 fins at 2.2 cm height | Measured mass (with motor): 34.45 g | Measured CG: ~14.5 cm from nose tip</p>
+
+      <h3>Manufacturing & Iteration</h3>
+      <p>The payload bay and nose cone were modeled in SolidWorks and 3D printed. The development process required multiple design iterations: adjusted shoulder diameters, modified tab geometry, and transitioned from loose fit to standard fit after testing.</p>
+      <p><em>Engineering loop: Simulation → CAD → Print → Fit Test → Modify → Reprint</em></p>
+
+      <h3>Flight Test & Validation</h3>
+      <p><strong>Predicted apogee:</strong> 117 ft<br>
+      <strong>Measured apogee:</strong> 81 ft<br>
+      <strong>Deviation:</strong> ~31% lower than predicted</p>
+      <p>Despite the altitude deviation, the rocket maintained stable, linear ascent, achieved proper recovery deployment, and successfully protected the altimeter. Contributors to the performance gap included launch rod friction, wind conditions, minor mass discrepancies, and streamer packing inefficiencies.</p>
+
+      <h3>Key Takeaways</h3>
+      <p>• Small geometric changes significantly affect stability margin and drag<br>
+      • Launch boundary conditions can meaningfully alter predicted apogee<br>
+      • Manufacturing tolerances influence aerodynamic performance<br>
+      • Experimental validation is critical for closing the sim-to-flight gap<br>
+      • Iterative engineering is essential when moving from simulation to hardware</p>`,
         pdfUrl: '#',
         featured: true,
-        images: ['', '', '']
+        images: [
+            { url: 'assets/project-1/solidworks-payload-bay.jpg', caption: 'Custom 3D-printed payload bay designed for aerodynamic performance and altimeter integration.' },
+            { url: 'assets/project-1/solidworks-nosecone.jpg', caption: 'Ogive nose cone modeled in SolidWorks for optimal aerodynamic performance.' },
+            { url: 'assets/project-1/mass-cg-breakdown.jpg', caption: 'Component-level mass property breakdown used to compute CG and validate stability requirements.' },
+            { url: 'assets/project-1/rocket-post-launch.jpg', caption: 'Fully assembled vehicle after flight test. Stable ascent and successful recovery were observed.' }
+        ]
     },
     {
         id: 'project-2',
@@ -300,15 +338,22 @@ function openProject(proj, i) {
     // Build gallery
     detailGallery.innerHTML = '';
     const images = proj.images || [];
-    images.forEach((imgUrl, idx) => {
+    images.forEach((img, idx) => {
+        const isObj = typeof img === 'object';
+        const imgUrl = isObj ? img.url : img;
+        const caption = isObj ? img.caption : '';
+
         const item = document.createElement('div');
         item.className = 'detail-gallery-item';
         if (imgUrl) {
             item.style.backgroundImage = `url('${imgUrl}')`;
+            if (caption) {
+                item.innerHTML = `<div class="gallery-caption">${caption}</div>`;
+            }
         } else {
             item.innerHTML = `<div class="gallery-placeholder-inner">
         <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-        <span>Image ${idx + 1}</span>
+        <span>${caption || 'Image ' + (idx + 1)}</span>
       </div>`;
         }
         detailGallery.appendChild(item);
