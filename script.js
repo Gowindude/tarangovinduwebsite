@@ -359,6 +359,12 @@ function openProject(proj, i) {
         <span>${caption || 'Image ' + (idx + 1)}</span>
       </div>`;
         }
+
+        // Click to open lightbox
+        if (imgUrl) {
+            item.addEventListener('click', () => openLightbox(imgUrl, caption));
+        }
+
         detailGallery.appendChild(item);
     });
 
@@ -367,6 +373,36 @@ function openProject(proj, i) {
 
 // Back button
 detailBack.addEventListener('click', () => switchPage('projects'));
+
+
+// ═══════════════════════════════
+// Lightbox
+// ═══════════════════════════════
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxCaption = document.getElementById('lightbox-caption');
+const lightboxClose = document.getElementById('lightbox-close');
+
+function openLightbox(src, caption) {
+    lightboxImg.src = src;
+    lightboxImg.alt = caption || '';
+    lightboxCaption.textContent = caption || '';
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+lightboxClose.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+});
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+});
 
 
 // ═══════════════════════════════

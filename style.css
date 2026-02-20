@@ -779,14 +779,94 @@ ul {
     left: 0;
     right: 0;
     padding: var(--space-sm) var(--space-md);
-    background: linear-gradient(0deg, rgba(6, 11, 24, 0.9) 0%, transparent 100%);
-    color: var(--color-text-muted);
+    background: rgba(6, 11, 24, 0.92);
+    color: var(--color-accent-light);
     font-size: 0.82rem;
     line-height: 1.4;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+    pointer-events: none;
 }
 
 .detail-gallery-item {
     position: relative;
+    cursor: pointer;
+}
+
+.detail-gallery-item:hover .gallery-caption {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ━━━ Image Lightbox ━━━ */
+.lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 300;
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s var(--ease);
+    cursor: zoom-out;
+}
+
+.lightbox-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox-overlay img {
+    max-width: 90vw;
+    max-height: 78vh;
+    border-radius: var(--radius);
+    object-fit: contain;
+    box-shadow: var(--shadow-glow);
+    transform: scale(0.95);
+    transition: transform 0.4s var(--ease-spring);
+}
+
+.lightbox-overlay.open img {
+    transform: scale(1);
+}
+
+.lightbox-caption {
+    margin-top: var(--space-md);
+    color: var(--color-accent-light);
+    font-size: 0.95rem;
+    max-width: 700px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    background: rgba(6, 11, 24, 0.6);
+    color: var(--color-text);
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s var(--ease);
+    z-index: 10;
+}
+
+.lightbox-close:hover {
+    background: var(--color-accent-glow);
+    border-color: var(--color-border-hover);
 }
 
 @media (max-width: 768px) {
