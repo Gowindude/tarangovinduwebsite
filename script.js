@@ -1,7 +1,7 @@
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    SCRIPT — Aerospace Portfolio
    Stars canvas, SPA nav, scroll animations,
-   project cards, modal, mobile menu
+   project cards, full-page detail, mobile menu
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
 // ═══════════════════════════════
@@ -21,7 +21,6 @@
     resize();
     window.addEventListener('resize', resize);
 
-    // Create stars
     for (let i = 0; i < STAR_COUNT; i++) {
         stars.push({
             x: Math.random() * canvas.width,
@@ -88,9 +87,13 @@ const projects = [
         thumbnail: '',
         heroImage: '',
         description: `<p>Placeholder description for your first project. Describe the objectives, your role, tools used, and key outcomes.</p>
-    <p>Add technical details, methodologies, and results here. This will appear in the project modal when a visitor clicks the card.</p>`,
+    <h3>Technical Details</h3>
+    <p>Add technical details, methodologies, and results here. This full page gives you plenty of room for lengthy descriptions, equations, and analysis details.</p>
+    <h3>Results & Outcomes</h3>
+    <p>Describe the results, any findings, performance metrics, and what you learned from this project.</p>`,
         pdfUrl: '#',
-        featured: true
+        featured: true,
+        images: ['', '', '']
     },
     {
         id: 'project-2',
@@ -100,7 +103,8 @@ const projects = [
         heroImage: '',
         description: `<p>Placeholder description for your second project.</p><p>Add technical details, methodologies, and results here.</p>`,
         pdfUrl: '#',
-        featured: true
+        featured: true,
+        images: ['', '']
     },
     {
         id: 'project-3',
@@ -110,7 +114,8 @@ const projects = [
         heroImage: '',
         description: `<p>Placeholder description for your third project.</p><p>Add technical details, methodologies, and results here.</p>`,
         pdfUrl: '#',
-        featured: true
+        featured: true,
+        images: ['', '']
     },
     {
         id: 'project-4',
@@ -120,7 +125,8 @@ const projects = [
         heroImage: '',
         description: `<p>Placeholder description for your fourth project.</p>`,
         pdfUrl: '#',
-        featured: false
+        featured: false,
+        images: ['', '']
     },
     {
         id: 'project-5',
@@ -130,7 +136,8 @@ const projects = [
         heroImage: '',
         description: `<p>Placeholder description for your fifth project.</p>`,
         pdfUrl: '#',
-        featured: false
+        featured: false,
+        images: ['']
     },
     {
         id: 'project-6',
@@ -140,7 +147,8 @@ const projects = [
         heroImage: '',
         description: `<p>Placeholder description for your sixth project.</p>`,
         pdfUrl: '#',
-        featured: false
+        featured: false,
+        images: ['']
     }
 ];
 
@@ -163,13 +171,13 @@ const navLogo = document.querySelector('.nav-logo');
 const pages = document.querySelectorAll('.page');
 const featuredGrid = document.getElementById('featured-grid');
 const projectsGrid = document.getElementById('projects-grid');
-const modal = document.getElementById('project-modal');
-const modalHero = document.getElementById('modal-hero');
-const modalTitle = document.getElementById('modal-title');
-const modalSubtitle = document.getElementById('modal-subtitle');
-const modalDesc = document.getElementById('modal-description');
-const modalPdf = document.getElementById('modal-pdf');
-const modalClose = document.getElementById('modal-close');
+const detailHero = document.getElementById('detail-hero');
+const detailTitle = document.getElementById('detail-title');
+const detailSub = document.getElementById('detail-subtitle');
+const detailDesc = document.getElementById('detail-description');
+const detailPdf = document.getElementById('detail-pdf');
+const detailGallery = document.getElementById('detail-gallery');
+const detailBack = document.getElementById('detail-back');
 const hamburger = document.getElementById('nav-hamburger');
 const navLinksContainer = document.getElementById('nav-links');
 
@@ -187,6 +195,13 @@ function switchPage(target) {
     navLinks.forEach(t => {
         if (t.dataset.target === target) t.classList.add('active');
     });
+
+    // Highlight "Projects" tab when viewing project detail
+    if (target === 'project-detail') {
+        navLinks.forEach(t => {
+            if (t.dataset.target === 'projects') t.classList.add('active');
+        });
+    }
 
     navLinksContainer.classList.remove('open');
     window.scrollTo({ top: 0, behavior: 'instant' });
@@ -248,8 +263,8 @@ function createCard(proj, i) {
       <p>${proj.subtitle}</p>
     </div>
   `;
-    card.addEventListener('click', () => openModal(proj, i));
-    card.addEventListener('keydown', (e) => { if (e.key === 'Enter') openModal(proj, i); });
+    card.addEventListener('click', () => openProject(proj, i));
+    card.addEventListener('keydown', (e) => { if (e.key === 'Enter') openProject(proj, i); });
     return card;
 }
 
@@ -269,34 +284,41 @@ function renderProjects() {
 
 
 // ═══════════════════════════════
-// Modal
+// Project Detail (Full Page)
 // ═══════════════════════════════
-function openModal(proj, i) {
-    modalHero.style.background = proj.heroImage
+function openProject(proj, i) {
+    // Set hero background
+    detailHero.style.background = proj.heroImage
         ? `url('${proj.heroImage}') center/cover`
         : gradients[i % gradients.length];
-    modalTitle.textContent = proj.title;
-    modalSubtitle.textContent = proj.subtitle;
-    modalDesc.innerHTML = proj.description;
-    modalPdf.href = proj.pdfUrl;
 
-    modal.classList.add('open');
-    modal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-    modalClose.focus();
+    detailTitle.textContent = proj.title;
+    detailSub.textContent = proj.subtitle;
+    detailDesc.innerHTML = proj.description;
+    detailPdf.href = proj.pdfUrl;
+
+    // Build gallery
+    detailGallery.innerHTML = '';
+    const images = proj.images || [];
+    images.forEach((imgUrl, idx) => {
+        const item = document.createElement('div');
+        item.className = 'detail-gallery-item';
+        if (imgUrl) {
+            item.style.backgroundImage = `url('${imgUrl}')`;
+        } else {
+            item.innerHTML = `<div class="gallery-placeholder-inner">
+        <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        <span>Image ${idx + 1}</span>
+      </div>`;
+        }
+        detailGallery.appendChild(item);
+    });
+
+    switchPage('project-detail');
 }
 
-function closeModal() {
-    modal.classList.remove('open');
-    modal.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-}
-
-modalClose.addEventListener('click', closeModal);
-modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
-});
+// Back button
+detailBack.addEventListener('click', () => switchPage('projects'));
 
 
 // ═══════════════════════════════
