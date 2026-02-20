@@ -332,8 +332,16 @@ ul {
 .page-intro {
     color: var(--color-text-muted);
     font-size: 1.05rem;
-    margin-bottom: var(--space-xl);
     max-width: 600px;
+}
+
+.projects-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+    flex-wrap: wrap;
 }
 
 .centered-action {
