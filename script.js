@@ -84,8 +84,8 @@ const projects = [
         id: 'project-1',
         title: 'Single-Stage Model Rocket: Design, Simulation & Flight Validation',
         subtitle: 'Flight Dynamics · Simulation · Rapid Prototyping · Experimental Validation',
-        thumbnail: 'assets/project-1/rocket-post-launch.jpg',
-        heroImage: 'assets/project-1/rocket-post-launch.jpg',
+        thumbnail: 'assets/project-1/rocketpostlaunch.jpg',
+        heroImage: 'assets/project-1/openrocketsim.png',
         description: `
       <h3>Overview</h3>
       <p>This project involved the full lifecycle design, simulation, manufacturing, and launch of a single-stage model rocket with a target apogee of <strong>125 ft</strong> while carrying a PerfectFlite Pnut altimeter payload. The objective was not only to reach a target altitude, but to validate how closely simulation predictions matched real-world performance.</p>
@@ -127,10 +127,13 @@ const projects = [
         pdfUrl: '#',
         featured: true,
         images: [
-            { url: 'assets/project-1/solidworks-payload-bay.jpg', caption: 'Custom 3D-printed payload bay designed for aerodynamic performance and altimeter integration.' },
-            { url: 'assets/project-1/solidworks-nosecone.jpg', caption: 'Ogive nose cone modeled in SolidWorks for optimal aerodynamic performance.' },
-            { url: 'assets/project-1/mass-cg-breakdown.jpg', caption: 'Component-level mass property breakdown used to compute CG and validate stability requirements.' },
-            { url: 'assets/project-1/rocket-post-launch.jpg', caption: 'Fully assembled vehicle after flight test. Stable ascent and successful recovery were observed.' }
+            { url: 'assets/project-1/openrocketsim.png', caption: 'OpenRocket model showing CG and CP placement with predicted 117 ft apogee and 1.77 caliber stability margin.' },
+            { url: 'assets/project-1/solidworkspayloadbay.png', caption: 'Custom 3D-printed payload bay designed for aerodynamic performance and altimeter integration.' },
+            { url: 'assets/project-1/solidworksnosecone.png', caption: 'Ogive nose cone modeled in SolidWorks for optimal aerodynamic performance.' },
+            { url: 'assets/project-1/solidworksfinholder.png', caption: 'SolidWorks fin holder component for structural mounting and alignment.' },
+            { url: 'assets/project-1/masscgbreakdown.png', caption: 'Component-level mass property breakdown used to compute CG and validate stability requirements.' },
+            { url: 'assets/project-1/rocketpostlaunch.jpg', caption: 'Fully assembled vehicle after flight test. Stable ascent and successful recovery were observed.' },
+            { url: 'assets/project-1/rocketpostlaunch(disassembled).jpg', caption: 'Disassembled rocket showing internal payload bay, body tube, and recovery system components.' }
         ]
     },
     {
