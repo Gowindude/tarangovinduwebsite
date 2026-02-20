@@ -1066,6 +1066,22 @@ ul {
     font-size: 0.92rem;
 }
 
+.timeline-card ul {
+    margin-top: var(--space-sm);
+    padding-left: var(--space-md);
+    color: var(--color-text-muted);
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+.timeline-card li {
+    margin-bottom: 6px;
+}
+
+.timeline-card li:last-child {
+    margin-bottom: 0;
+}
+
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    RESUME PAGE
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
