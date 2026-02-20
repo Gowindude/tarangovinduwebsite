@@ -60,6 +60,14 @@
                     </button>
                     <a href="#" class="btn btn-glass" download>Download Résumé</a>
                 </div>
+                <div class="hero-contact fade-up"
+                    style="animation-delay: 1.2s; margin-top: 1.5rem; display: flex; align-items: center; justify-content: center; gap: 1rem;">
+                    <span style="color: var(--color-text-muted); font-size: 0.95rem;">Contact:</span>
+                    <a href="https://www.linkedin.com/in/taran-govindu/" target="_blank" rel="noopener noreferrer"
+                        style="color: var(--color-text); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 2px; transition: border-color 0.3s ease;">LinkedIn</a>
+                    <a href="mailto:tgovindu6@gatech.edu"
+                        style="color: var(--color-text); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 2px; transition: border-color 0.3s ease;">tgovindu6@gatech.edu</a>
+                </div>
             </div>
             <div class="scroll-indicator">
                 <span>Scroll</span>
@@ -112,10 +120,25 @@
                     </div>
                 </div>
                 <div class="about-text-col fade-up" style="animation-delay: 0.15s;">
-                    <p class="about-lead">Placeholder for your personal introduction. Describe your background, passion
-                        for aerospace, and what drives your engineering work.</p>
-                    <p class="about-body">Placeholder for more detail — your academic journey, professional experience
-                        summary, and what kind of work excites you most.</p>
+                    <p class="about-lead">I’m an Aerospace Engineering student at Georgia Tech focused on simulation,
+                        vehicle dynamics, and autonomous systems. I’m most interested in building and testing physically
+                        grounded models that translate into real hardware — whether that’s rockets, drones, or
+                        propulsion systems. My work sits at the intersection of flight physics, control, and rapid
+                        iteration, and I enjoy taking systems from concept to validated performance.</p>
+                    <p class="about-body">I’m currently studying Aerospace Engineering at Georgia Tech (4.0 GPA), where
+                        I focus on flight dynamics, simulation, and system-level vehicle design. Across my projects, I
+                        consistently work at the boundary between software and hardware — developing high-fidelity
+                        simulations while also designing and building real components.</p>
+                    <p class="about-body">On the Propulsive Landers team, I design propulsion feed system hardware and
+                        am developing a rocket dynamics simulation in Rust to test guidance and control algorithms.
+                        Through FluxSpace, I co-founded an autonomous drone inspection startup where I built a
+                        simulation testbed to validate autonomy strategies before hardware deployment. I’m also part of
+                        the Exascale CFD VIP, where I’m developing numerical solvers for nonlinear PDEs and exploring
+                        stabilization techniques.</p>
+                    <p class="about-body">What excites me most is iterative engineering: building models, testing
+                        assumptions, refining designs, and closing the loop between prediction and reality. Long term, I
+                        want to work on high-performance aerospace systems where simulation, control, and physical
+                        constraints all intersect.</p>
                     <a href="#" class="btn btn-outline" download>Download Résumé</a>
                 </div>
             </div>
@@ -125,21 +148,41 @@
                     <span class="section-label">Expertise</span>
                     <h2>Technical Skills</h2>
                 </div>
-                <div class="skills-orbit">
-                    <span class="skill-chip" style="--delay: 0s;">SolidWorks</span>
-                    <span class="skill-chip" style="--delay: 0.05s;">CATIA V5</span>
-                    <span class="skill-chip" style="--delay: 0.1s;">ANSYS</span>
-                    <span class="skill-chip" style="--delay: 0.15s;">NASTRAN</span>
-                    <span class="skill-chip" style="--delay: 0.2s;">MATLAB</span>
-                    <span class="skill-chip" style="--delay: 0.25s;">Python</span>
-                    <span class="skill-chip" style="--delay: 0.3s;">GD&amp;T</span>
-                    <span class="skill-chip" style="--delay: 0.35s;">FEA</span>
-                    <span class="skill-chip" style="--delay: 0.4s;">CFD</span>
-                    <span class="skill-chip" style="--delay: 0.45s;">AutoCAD</span>
-                    <span class="skill-chip" style="--delay: 0.5s;">NX</span>
-                    <span class="skill-chip" style="--delay: 0.55s;">3D Printing</span>
-                    <span class="skill-chip" style="--delay: 0.6s;">Wind Tunnel</span>
-                    <span class="skill-chip" style="--delay: 0.65s;">Composites</span>
+                <div class="skills-category">
+                    <h3>Simulation & Dynamics</h3>
+                    <div class="skills-orbit">
+                        <span class="skill-chip" style="--delay: 0s;">Flight Dynamics</span>
+                        <span class="skill-chip" style="--delay: 0.05s;">Numerical Methods</span>
+                        <span class="skill-chip" style="--delay: 0.1s;">Physics-Based Simulation</span>
+                        <span class="skill-chip" style="--delay: 0.15s;">CFD</span>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3>Programming</h3>
+                    <div class="skills-orbit">
+                        <span class="skill-chip" style="--delay: 0.2s;">Python</span>
+                        <span class="skill-chip" style="--delay: 0.25s;">Rust</span>
+                        <span class="skill-chip" style="--delay: 0.3s;">C++</span>
+                        <span class="skill-chip" style="--delay: 0.35s;">MATLAB</span>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3>CAD & Mechanical</h3>
+                    <div class="skills-orbit">
+                        <span class="skill-chip" style="--delay: 0.4s;">SolidWorks</span>
+                        <span class="skill-chip" style="--delay: 0.45s;">CATIA</span>
+                        <span class="skill-chip" style="--delay: 0.5s;">ANSYS (Fluent & Mechanical)</span>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3>Systems</h3>
+                    <div class="skills-orbit">
+                        <span class="skill-chip" style="--delay: 0.55s;">Autonomous Systems</span>
+                        <span class="skill-chip" style="--delay: 0.6s;">Propulsion Feed Systems</span>
+                    </div>
                 </div>
             </div>
 

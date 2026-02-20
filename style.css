@@ -934,6 +934,16 @@ ul {
     margin-bottom: var(--space-3xl);
 }
 
+.skills-category {
+    margin-bottom: var(--space-lg);
+}
+
+.skills-category h3 {
+    font-size: 1.1rem;
+    color: var(--color-accent-light);
+    margin-bottom: var(--space-sm);
+}
+
 .skills-orbit {
     display: flex;
     flex-wrap: wrap;
