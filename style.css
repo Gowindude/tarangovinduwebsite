@@ -934,6 +934,18 @@ ul {
     margin-bottom: var(--space-3xl);
 }
 
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+}
+
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .skills-category {
     margin-bottom: var(--space-lg);
 }

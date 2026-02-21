@@ -138,7 +138,7 @@ const projects = [
     },
     {
         id: 'project-2',
-        title: 'High-Aspect-Ratio Balsa Wood Glider Design',
+        title: 'Balsa Wood Glider Design',
         subtitle: 'Aerodynamics · Flight Vehicle Design',
         thumbnail: 'assets/project-2/early design.png',
         heroImage: 'assets/project-2/early design.png',
@@ -394,6 +394,8 @@ function renderProjects() {
 // ═══════════════════════════════
 // Project Detail (Full Page)
 // ═══════════════════════════════
+let currentProject = null;
+
 function openProject(proj, i) {
     // Set hero background
     detailHero.style.background = proj.heroImage
@@ -403,7 +405,12 @@ function openProject(proj, i) {
     detailTitle.textContent = proj.title;
     detailSub.textContent = proj.subtitle;
     detailDesc.innerHTML = proj.description;
-    detailPdf.href = proj.pdfUrl;
+
+    currentProject = proj;
+    detailPdf.onclick = (e) => {
+        e.preventDefault();
+        generateProjectPDF(currentProject);
+    };
 
     // Build gallery
     detailGallery.innerHTML = '';
@@ -471,6 +478,122 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
 });
 
+
+// ═══════════════════════════════
+// PDF Generation
+// ═══════════════════════════════
+function generateProjectPDF(proj) {
+    const container = document.createElement('div');
+    container.style.padding = '40px';
+    container.style.fontFamily = 'Inter, sans-serif';
+    container.style.color = '#1e293b';
+    container.style.background = '#ffffff';
+
+    container.innerHTML = `
+        <h1 style="color: #2563eb; margin-bottom: 5px; font-size: 28px;">${proj.title}</h1>
+        <p style="color: #64748b; font-size: 16px; margin-bottom: 25px;">${proj.subtitle}</p>
+        <div style="font-size: 14px; line-height: 1.6; color: #334155; margin-bottom: 30px;">
+            ${proj.description}
+        </div>
+    `;
+
+    if (proj.images && proj.images.length > 0 && typeof proj.images[0] !== 'string') {
+        const imgSection = document.createElement('div');
+        imgSection.innerHTML = '<h2 style="color: #2563eb; font-size: 22px; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 20px;">Project Images</h2>';
+
+        proj.images.forEach(img => {
+            const imgUrl = typeof img === 'object' ? img.url : img;
+            const caption = typeof img === 'object' ? img.caption : '';
+            if (!imgUrl) return;
+
+            imgSection.innerHTML += `
+                <div style="margin-bottom: 30px; page-break-inside: avoid;">
+                    <img src="${imgUrl}" style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid #cbd5e1;" />
+                    ${caption ? `<div style="color: #64748b; font-size: 13px; margin-top: 10px; text-align: center; font-style: italic;">${caption}</div>` : ''}
+                </div>
+            `;
+        });
+        container.appendChild(imgSection);
+    }
+
+    const opt = {
+        margin: 0.5,
+        filename: `${proj.title.replace(/\s+/g, '_')}_Overview.pdf`,
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
+
+    html2pdf().set(opt).from(container).save();
+}
+
+function generateAllProjectsPDF() {
+    const container = document.createElement('div');
+    container.style.padding = '40px';
+    container.style.fontFamily = 'Inter, sans-serif';
+    container.style.color = '#1e293b';
+    container.style.background = '#ffffff';
+
+    container.innerHTML = `
+        <div style="height: 900px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+            <h1 style="color: #2563eb; font-size: 40px; margin-bottom: 15px;">Engineering Portfolio</h1>
+            <p style="color: #64748b; font-size: 20px;">Taran Govindu</p>
+        </div>
+    `;
+
+    projects.forEach((proj, idx) => {
+        if (!proj.title || proj.title.includes('Title Three') || proj.title.includes('Title Four') || proj.title.includes('Title Five') || proj.title.includes('Title Six')) return;
+
+        const projDiv = document.createElement('div');
+        projDiv.style.pageBreakBefore = 'always';
+
+        projDiv.innerHTML = `
+            <h1 style="color: #2563eb; margin-bottom: 5px; font-size: 28px;">${proj.title}</h1>
+            <p style="color: #64748b; font-size: 16px; margin-bottom: 25px;">${proj.subtitle}</p>
+            <div style="font-size: 14px; line-height: 1.6; color: #334155; margin-bottom: 30px;">
+                ${proj.description}
+            </div>
+        `;
+
+        if (proj.images && proj.images.length > 0 && typeof proj.images[0] !== 'string') {
+            const imgSection = document.createElement('div');
+            imgSection.innerHTML = '<h2 style="color: #2563eb; font-size: 22px; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 20px;">Project Images</h2>';
+
+            proj.images.forEach(img => {
+                const imgUrl = typeof img === 'object' ? img.url : img;
+                const caption = typeof img === 'object' ? img.caption : '';
+                if (!imgUrl) return;
+
+                imgSection.innerHTML += `
+                    <div style="margin-bottom: 30px; page-break-inside: avoid;">
+                        <img src="${imgUrl}" style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid #cbd5e1;" />
+                        ${caption ? `<div style="color: #64748b; font-size: 13px; margin-top: 10px; text-align: center; font-style: italic;">${caption}</div>` : ''}
+                    </div>
+                `;
+            });
+            projDiv.appendChild(imgSection);
+        }
+        container.appendChild(projDiv);
+    });
+
+    const opt = {
+        margin: 0.5,
+        filename: 'Taran_Govindu_Portfolio.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
+
+    html2pdf().set(opt).from(container).save();
+}
+
+const downloadAllBtn = document.getElementById('download-all-projects');
+if (downloadAllBtn) {
+    downloadAllBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        generateAllProjectsPDF();
+    });
+}
 
 // ═══════════════════════════════
 // Init
