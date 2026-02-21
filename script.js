@@ -138,14 +138,81 @@ const projects = [
     },
     {
         id: 'project-2',
-        title: 'Project Title Two',
-        subtitle: 'Category · Subcategory',
+        title: 'High-Aspect-Ratio Balsa Wood Glider Design',
+        subtitle: 'Aerodynamics · Flight Vehicle Design',
         thumbnail: '',
         heroImage: '',
-        description: `<p>Placeholder description for your second project.</p><p>Add technical details, methodologies, and results here.</p>`,
+        description: `
+      <p>Designed, built, and flight-tested a hand-launched balsa wood glider to maximize forward flight distance under strict geometric, structural, and aerodynamic constraints. The project required satisfying aspect ratio, wing loading, material composition, and size limits while achieving stable and efficient unpowered flight.</p>
+      
+      <p>The final glider achieved flights averaging 45–50 feet during testing, exceeding the 20-foot minimum requirement, with quantitative validation of wing loading, aspect ratio, and stability criteria.</p>
+
+      <h3>Objectives</h3>
+      <ul>
+        <li>Maximize forward flight distance</li>
+        <li>Meet strict size (16 in × 16 in) and structural constraints</li>
+        <li>Maintain &gt;50% balsa wood by weight</li>
+        <li>Achieve high aerodynamic efficiency while ensuring longitudinal stability</li>
+        <li>Document full engineering design process</li>
+      </ul>
+
+      <h3>Key Design Decisions</h3>
+      <h4>High Aspect Ratio Wing</h4>
+      <ul>
+        <li>Wingspan: 22 in</li>
+        <li>Chord: 1.5 in</li>
+        <li>Aspect Ratio: ~12.5</li>
+        <li>Reduced induced drag to improve glide efficiency</li>
+      </ul>
+
+      <h4>Low Conventional Tail Configuration</h4>
+      <ul>
+        <li>Horizontal stabilizer mounted at slight downward incidence (~10° initial concept)</li>
+        <li>Positioned CG approximately 0.25 in ahead of quarter-chord for longitudinal stability</li>
+      </ul>
+
+      <h4>Lightweight Construction Strategy</h4>
+      <ul>
+        <li>Total mass: 17 g</li>
+        <li>Wing loading: 0.092 g/cm² (well below 0.5 g/cm² limit)</li>
+        <li>Wood mass fraction: 52.9%</li>
+      </ul>
+
+      <h3>Aerodynamic Analysis</h3>
+      <p>Estimated aerodynamic coefficients using first-order approximations:</p>
+      <ul>
+        <li>Lift coefficient (C<sub>L</sub>) ≈ 2.19</li>
+        <li>Drag coefficient (C<sub>D</sub>) ≈ 0.176</li>
+        <li>Zero-lift drag ≈ 0.03</li>
+        <li>Induced drag calculated using AR = 12.5 and Oswald efficiency factor ≈ 0.85</li>
+      </ul>
+      <p>Wing loading and aspect ratio calculations were performed to validate compliance with performance constraints and predict glide efficiency.</p>
+
+      <h3>Design Iterations</h3>
+      <ul>
+        <li>Adjusted wing placement along fuselage to optimize CG location</li>
+        <li>Iteratively modified ballast mass (Play-Doh) for trim stability</li>
+        <li>Evaluated dihedral implementation but avoided structural risk due to thin balsa</li>
+        <li>Reinforced weak joints after structural failure during late-stage testing</li>
+      </ul>
+      <p>Structural failure of one wing and vertical stabilizer immediately prior to final trials negatively impacted measured performance but validated structural tradeoffs between weight and durability.</p>
+
+      <h3>Results</h3>
+      <ul>
+        <li>Average test flight distance: 45–50 ft</li>
+        <li>Official measured flights: 30–35 ft (post-damage condition)</li>
+        <li>Stable longitudinal behavior with CG positioned ahead of quarter-chord</li>
+        <li>Successful compliance with all geometric and mass constraints</li>
+      </ul>`,
         pdfUrl: '#',
         featured: true,
-        images: ['', '']
+        images: [
+            { url: '', caption: 'Initial assembly of fuselage-wing joint with temporary rubber band constraint used to test alignment and structural fit prior to final bonding.' },
+            { url: '', caption: 'Fuselage marked for iterative CG positioning during longitudinal stability testing. Wing placement was adjusted incrementally to optimize glide performance.' },
+            { url: '', caption: 'Play-Doh ballast added and repositioned during flight testing to tune pitch stability and trim condition.' },
+            { url: '', caption: 'Final planform geometry drafted to verify 16 in × 16 in constraint compliance and visualize wing aspect ratio and tail configuration.' },
+            { url: '', caption: 'Final trim setup with secured ballast used to tune center of gravity for stable, high-efficiency glide performance.' }
+        ]
     },
     {
         id: 'project-3',
