@@ -140,8 +140,8 @@ const projects = [
         id: 'project-2',
         title: 'High-Aspect-Ratio Balsa Wood Glider Design',
         subtitle: 'Aerodynamics · Flight Vehicle Design',
-        thumbnail: '',
-        heroImage: '',
+        thumbnail: 'assets/project-2/early design.png',
+        heroImage: 'assets/project-2/early design.png',
         description: `
       <p>Designed, built, and flight-tested a hand-launched balsa wood glider to maximize forward flight distance under strict geometric, structural, and aerodynamic constraints. The project required satisfying aspect ratio, wing loading, material composition, and size limits while achieving stable and efficient unpowered flight.</p>
       
@@ -207,11 +207,11 @@ const projects = [
         pdfUrl: '#',
         featured: true,
         images: [
-            { url: '', caption: 'Initial assembly of fuselage-wing joint with temporary rubber band constraint used to test alignment and structural fit prior to final bonding.' },
-            { url: '', caption: 'Fuselage marked for iterative CG positioning during longitudinal stability testing. Wing placement was adjusted incrementally to optimize glide performance.' },
-            { url: '', caption: 'Play-Doh ballast added and repositioned during flight testing to tune pitch stability and trim condition.' },
-            { url: '', caption: 'Final planform geometry drafted to verify 16 in × 16 in constraint compliance and visualize wing aspect ratio and tail configuration.' },
-            { url: '', caption: 'Final trim setup with secured ballast used to tune center of gravity for stable, high-efficiency glide performance.' }
+            { url: 'assets/project-2/early design.png', caption: 'Initial assembly of fuselage-wing joint with temporary rubber band constraint used to test alignment and structural fit prior to final bonding.' },
+            { url: 'assets/project-2/center of gravity testing.png', caption: 'Fuselage marked for iterative CG positioning during longitudinal stability testing. Wing placement was adjusted incrementally to optimize glide performance.' },
+            { url: 'assets/project-2/play-doh tuning.png', caption: 'Play-Doh ballast added and repositioned during flight testing to tune pitch stability and trim condition.' },
+            { url: 'assets/project-2/finalized sketch.png', caption: 'Final planform geometry drafted to verify 16 in × 16 in constraint compliance and visualize wing aspect ratio and tail configuration.' },
+            { url: 'assets/project-2/finalflightconfig.png', caption: 'Final trim setup with secured ballast used to tune center of gravity for stable, high-efficiency glide performance.' }
         ]
     },
     {
