@@ -361,11 +361,6 @@ const projects = [
 
       <h3>Link to Publication</h3>
       <p>Read the published version here: <br>
-      <a href="https://nhsjs.com/2024/analysis-of-geometric-representations-used-to-simplify-spacetime-curvature-of-black-holes/" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent-light); text-decoration: underline;">The National High School Journal of Science</a></p>`,
-        pdfUrl: '#',
-        featured: false,
-        images: []
-    },
     {
         id: 'project-5',
         title: 'Restoration and Rebuild of Sundials',
@@ -373,7 +368,7 @@ const projects = [
         thumbnail: 'assets/project-5/eagle final.png',
         heroImage: 'assets/project-5/eagle final.png',
         description: `
-      <p>As my Eagle Scout service project, I led the full restoration and structural redesign of an outdoor educational sundial installation at Mattos Elementary School. The existing structure had suffered from years of weather exposure, resulting in wood rot, faded hour markings, structural instability, and inaccurate alignment. The goal was not just cosmetic repair, but to restore long-term structural integrity and educational functionality before scheduled campus construction began.</p>
+            < p > As my Eagle Scout service project, I led the full restoration and structural redesign of an outdoor educational sundial installation at Mattos Elementary School.The existing structure had suffered from years of weather exposure, resulting in wood rot, faded hour markings, structural instability, and inaccurate alignment.The goal was not just cosmetic repair, but to restore long- term structural integrity and educational functionality before scheduled campus construction began.</p >
 
       <p>I owned the project end-to-end.</p>
 
@@ -462,17 +457,6 @@ const projects = [
             { url: 'assets/project-5/eaglebeforevsafter.png', caption: 'Front-facing comparison showing restored hour markings, reinforced support structure, and reinforcement for long-term outdoor durability.' },
             { url: 'assets/project-5/eagle final.png', caption: 'Completed sundial installation following full structural restoration and repainting.' }
         ]
-    },
-    {
-        id: 'project-6',
-        title: 'Project Title Six',
-        subtitle: 'Category · Subcategory',
-        thumbnail: '',
-        heroImage: '',
-        description: `<p>Placeholder description for your sixth project.</p>`,
-        pdfUrl: '#',
-        featured: false,
-        images: ['']
     }
 ];
 
@@ -578,13 +562,13 @@ function createCard(proj, i) {
     card.className = 'project-card';
     card.setAttribute('tabindex', '0');
     card.setAttribute('role', 'button');
-    card.setAttribute('aria-label', `View project: ${proj.title}`);
-    card.style.animationDelay = `${i * 0.1}s`;
+    card.setAttribute('aria-label', `View project: ${ proj.title }`);
+    card.style.animationDelay = `${ i * 0.1}s`;
     card.innerHTML = `
-    <div class="project-card-thumb" style="background: ${proj.thumbnail ? `url('${proj.thumbnail}') center/cover` : gradients[i % gradients.length]}"></div>
+    < div class= "project-card-thumb" style = "background: ${proj.thumbnail ? `url('${proj.thumbnail}') center/cover` : gradients[i % gradients.length]}" ></div >
     <div class="project-card-body">
-      <h3>${proj.title}</h3>
-      <p>${proj.subtitle}</p>
+        <h3>${proj.title}</h3>
+        <p>${proj.subtitle}</p>
     </div>
   `;
     card.addEventListener('click', () => openProject(proj, i));
@@ -615,7 +599,7 @@ let currentProject = null;
 function openProject(proj, i) {
     // Set hero background
     detailHero.style.background = proj.heroImage
-        ? `url('${proj.heroImage}') center/cover`
+        ? `url('${proj.heroImage}') center / cover`
         : gradients[i % gradients.length];
 
     detailTitle.textContent = proj.title;
@@ -641,13 +625,13 @@ function openProject(proj, i) {
         if (imgUrl) {
             item.style.backgroundImage = `url('${imgUrl}')`;
             if (caption) {
-                item.innerHTML = `<div class="gallery-caption">${caption}</div>`;
+                item.innerHTML = `< div class= "gallery-caption" > ${ caption }</div > `;
             }
         } else {
-            item.innerHTML = `<div class="gallery-placeholder-inner">
+            item.innerHTML = `< div class= "gallery-placeholder-inner" >
         <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
         <span>${caption || 'Image ' + (idx + 1)}</span>
-      </div>`;
+      </div > `;
         }
 
         // Click to open lightbox
@@ -665,11 +649,11 @@ function openProject(proj, i) {
         manuscriptDiv.style.marginTop = '40px';
         manuscriptDiv.style.gridColumn = '1 / -1';
         manuscriptDiv.innerHTML = `
-            <h3 style="font-size: 1.5rem; margin-bottom: 20px; color: var(--color-text);">Full Manuscript</h3>
-            <div style="width: 100%; border-radius: var(--radius); overflow: hidden; background: #fff; border: 1px solid var(--glass-border);">
-                <iframe src="assets/project-4/Paper Manuscript.pdf" width="100%" height="800px" style="border: none; display: block;"></iframe>
-            </div>
-        `;
+    < h3 style = "font-size: 1.5rem; margin-bottom: 20px; color: var(--color-text);" > Full Manuscript</h3 >
+        <div style="width: 100%; border-radius: var(--radius); overflow: hidden; background: #fff; border: 1px solid var(--glass-border);">
+            <iframe src="assets/project-4/Paper Manuscript.pdf" width="100%" height="800px" style="border: none; display: block;"></iframe>
+        </div>
+`;
         detailGallery.appendChild(manuscriptDiv);
     }
 
@@ -680,11 +664,11 @@ function openProject(proj, i) {
         workbookDiv.style.marginTop = '40px';
         workbookDiv.style.gridColumn = '1 / -1';
         workbookDiv.innerHTML = `
-            <h3 style="font-size: 1.5rem; margin-bottom: 20px; color: var(--color-text);">Eagle Scout Project Workbook</h3>
-            <div style="width: 100%; border-radius: var(--radius); overflow: hidden; background: #fff; border: 1px solid var(--glass-border);">
-                <iframe src="assets/project-5/EagleProjectWorkbook2024 _TaranG154.pdf" width="100%" height="800px" style="border: none; display: block;"></iframe>
-            </div>
-        `;
+    < h3 style = "font-size: 1.5rem; margin-bottom: 20px; color: var(--color-text);" > Eagle Scout Project Workbook</h3 >
+        <div style="width: 100%; border-radius: var(--radius); overflow: hidden; background: #fff; border: 1px solid var(--glass-border);">
+            <iframe src="assets/project-5/EagleProjectWorkbook2024 _TaranG154.pdf" width="100%" height="800px" style="border: none; display: block;"></iframe>
+        </div>
+`;
         detailGallery.appendChild(workbookDiv);
     }
 
@@ -736,12 +720,12 @@ function generateProjectPDF(proj) {
     container.style.background = '#ffffff';
 
     container.innerHTML = `
-        <h1 style="color: #2563eb; margin-bottom: 5px; font-size: 28px;">${proj.title}</h1>
-        <p style="color: #64748b; font-size: 16px; margin-bottom: 25px;">${proj.subtitle}</p>
+    < h1 style = "color: #2563eb; margin-bottom: 5px; font-size: 28px;" > ${ proj.title }</h1 >
+        <p style="color: #334155; font-weight: 600; font-size: 16px; margin-bottom: 25px;">${proj.subtitle}</p>
         <div style="font-size: 14px; line-height: 1.6; color: #334155; margin-bottom: 30px;">
             ${proj.description}
         </div>
-    `;
+`;
 
     if (proj.images && proj.images.length > 0 && typeof proj.images[0] !== 'string') {
         const imgSection = document.createElement('div');
@@ -753,18 +737,18 @@ function generateProjectPDF(proj) {
             if (!imgUrl) return;
 
             imgSection.innerHTML += `
-                <div style="margin-bottom: 30px; page-break-inside: avoid;">
-                    <img src="${imgUrl}" style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid #cbd5e1;" />
-                    ${caption ? `<div style="color: #64748b; font-size: 13px; margin-top: 10px; text-align: center; font-style: italic;">${caption}</div>` : ''}
-                </div>
-            `;
+    < div style = "margin-bottom: 40px; page-break-inside: avoid; text-align: center;" >
+        <img src="${imgUrl}" style="max-width: 100%; max-height: 500px; object-fit: contain; border-radius: 8px; border: 1px solid #cbd5e1;" />
+                    ${ caption ? `<div style="color: #334155; font-size: 13px; margin-top: 10px; font-style: italic;">${caption}</div>` : '' }
+                </div >
+    `;
         });
         container.appendChild(imgSection);
     }
 
     const opt = {
         margin: 0.5,
-        filename: `${proj.title.replace(/\s+/g, '_')}_Overview.pdf`,
+        filename: `${ proj.title.replace(/\s+/g, '_') } _Overview.pdf`,
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: { scale: 2, useCORS: true },
         jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
@@ -781,10 +765,10 @@ function generateAllProjectsPDF() {
     container.style.background = '#ffffff';
 
     container.innerHTML = `
-        <div style="height: 900px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+    < div style = "height: 900px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;" >
             <h1 style="color: #2563eb; font-size: 40px; margin-bottom: 15px;">Engineering Portfolio</h1>
             <p style="color: #64748b; font-size: 20px;">Taran Govindu</p>
-        </div>
+        </div >
     `;
 
     projects.forEach((proj, idx) => {
@@ -794,12 +778,12 @@ function generateAllProjectsPDF() {
         projDiv.style.pageBreakBefore = 'always';
 
         projDiv.innerHTML = `
-            <h1 style="color: #2563eb; margin-bottom: 5px; font-size: 28px;">${proj.title}</h1>
-            <p style="color: #64748b; font-size: 16px; margin-bottom: 25px;">${proj.subtitle}</p>
+    < h1 style = "color: #2563eb; margin-bottom: 5px; font-size: 28px;" > ${ proj.title }</h1 >
+            <p style="color: #334155; font-weight: 600; font-size: 16px; margin-bottom: 25px;">${proj.subtitle}</p>
             <div style="font-size: 14px; line-height: 1.6; color: #334155; margin-bottom: 30px;">
                 ${proj.description}
             </div>
-        `;
+`;
 
         if (proj.images && proj.images.length > 0 && typeof proj.images[0] !== 'string') {
             const imgSection = document.createElement('div');
@@ -811,11 +795,11 @@ function generateAllProjectsPDF() {
                 if (!imgUrl) return;
 
                 imgSection.innerHTML += `
-                    <div style="margin-bottom: 30px; page-break-inside: avoid;">
-                        <img src="${imgUrl}" style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid #cbd5e1;" />
-                        ${caption ? `<div style="color: #64748b; font-size: 13px; margin-top: 10px; text-align: center; font-style: italic;">${caption}</div>` : ''}
-                    </div>
-                `;
+    < div style = "margin-bottom: 40px; page-break-inside: avoid; text-align: center;" >
+        <img src="${imgUrl}" style="max-width: 100%; max-height: 500px; object-fit: contain; border-radius: 8px; border: 1px solid #cbd5e1;" />
+                        ${ caption ? `<div style="color: #334155; font-size: 13px; margin-top: 10px; font-style: italic;">${caption}</div>` : '' }
+                    </div >
+    `;
             });
             projDiv.appendChild(imgSection);
         }
