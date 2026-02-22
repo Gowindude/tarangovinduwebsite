@@ -697,7 +697,13 @@ ul {
 }
 
 .detail-back {
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-xl);
+}
+
+#detail-subtitle {
+    display: inline-block;
+    margin-bottom: var(--space-xs);
+    opacity: 0.9;
 }
 
 .detail-body {

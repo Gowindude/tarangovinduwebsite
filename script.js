@@ -92,13 +92,15 @@ const projects = [
       <p>The project combined <strong>OpenRocket</strong> aerodynamic and flight simulation, <strong>SolidWorks</strong> CAD modeling, <strong>3D printing</strong> and rapid iteration, mass property analysis and CG validation, and experimental flight testing with performance comparison.</p>
 
       <h3>Objectives</h3>
-      <p>• Reach a target apogee of 125 ft<br>
-      • Maintain a stability margin between 1.0–2.0 calibers<br>
-      • Successfully integrate and protect an onboard altimeter<br>
-      • Compare predicted flight performance to measured flight data</p>
+      <ul>
+        <li>Reach a target apogee of 125 ft</li>
+        <li>Maintain a stability margin between 1.0–2.0 calibers</li>
+        <li>Successfully integrate and protect an onboard altimeter</li>
+        <li>Compare predicted flight performance to measured flight data</li>
+      </ul>
 
-      <h3>My Role</h3>
-      <p>I was the <strong>primary designer of the payload bay</strong> and led its development from simulation constraints to physical implementation. Responsibilities included designing and dimensioning the payload bay in SolidWorks, integrating altimeter geometry and retention constraints, iterating fit tolerances across multiple print cycles, performing mass and CG calculations to validate stability margins, and contributing to post-flight performance analysis.</p>
+      <h2 style="font-size: 1.6rem; color: var(--color-text); margin-top: 32px; margin-bottom: 16px;">Project Scope & Responsibilities</h2>
+      <p>I owned this project end-to-end. I was the <strong>primary designer of the payload bay</strong> and led its development from simulation constraints to physical implementation. Responsibilities included designing and dimensioning the payload bay in SolidWorks, integrating altimeter geometry and retention constraints, iterating fit tolerances across multiple print cycles, performing mass and CG calculations to validate stability margins, and contributing to post-flight performance analysis.</p>
 
       <h3>Simulation & Design</h3>
       <p>The vehicle was iteratively modified in OpenRocket to approach the 125 ft target while maintaining stable flight. Design variables included nose cone geometry (ogive selected), payload bay dimensions, body tube length, fin height/count, and motor selection.</p>
@@ -119,11 +121,13 @@ const projects = [
       <p>Despite the altitude deviation, the rocket maintained stable, linear ascent, achieved proper recovery deployment, and successfully protected the altimeter. Contributors to the performance gap included launch rod friction, wind conditions, minor mass discrepancies, and streamer packing inefficiencies.</p>
 
       <h3>Key Takeaways</h3>
-      <p>• Small geometric changes significantly affect stability margin and drag<br>
-      • Launch boundary conditions can meaningfully alter predicted apogee<br>
-      • Manufacturing tolerances influence aerodynamic performance<br>
-      • Experimental validation is critical for closing the sim-to-flight gap<br>
-      • Iterative engineering is essential when moving from simulation to hardware</p>`,
+      <ul>
+        <li>Small geometric changes significantly affect stability margin and drag</li>
+        <li>Launch boundary conditions can meaningfully alter predicted apogee</li>
+        <li>Manufacturing tolerances influence aerodynamic performance</li>
+        <li>Experimental validation is critical for closing the sim-to-flight gap</li>
+        <li>Iterative engineering is essential when moving from simulation to hardware</li>
+      </ul>`,
         pdfUrl: '#',
         featured: true,
         images: [
@@ -147,7 +151,7 @@ const projects = [
       
       <p>The final glider achieved flights averaging 45–50 feet during testing, exceeding the 20-foot minimum requirement, with quantitative validation of wing loading, aspect ratio, and stability criteria.</p>
 
-      <h3>Objectives</h3>
+      <h2 style="font-size: 1.6rem; color: var(--color-text); margin-top: 32px; margin-bottom: 16px;">Project Scope & Responsibilities</h2>
       <ul>
         <li>Maximize forward flight distance</li>
         <li>Meet strict size (16 in × 16 in) and structural constraints</li>
@@ -265,14 +269,14 @@ const projects = [
         <li>Achieved consistent, repeatable flight performance under manual and stabilized control modes</li>
       </ul>
 
-      <h3>Leadership & Mentorship</h3>
+      <h2 style="font-size: 1.6rem; color: var(--color-text); margin-top: 32px; margin-bottom: 16px;">Project Scope & Responsibilities</h2>
       <ul>
         <li>Taught CAD modeling principles and parametric design</li>
         <li>Guided students through electronics soldering and integration</li>
         <li>Demonstrated systems-level thinking across mechanical, electrical, and software domains</li>
         <li>Managed component procurement and build sequencing</li>
-      </ul>
-      <p>This project demonstrated the ability to translate conceptual vehicle design into functional hardware while mentoring others through the process.</p>`,
+        <li>Translated conceptual vehicle design into functional hardware while mentoring others through the process</li>
+      </ul>`,
         pdfUrl: '#',
         featured: true,
         images: [
@@ -294,16 +298,16 @@ const projects = [
       4,500+ Views</p>
 
       <h3>Overview</h3>
-      <p>This research investigates how geometric spacetime diagrams can be used to simplify and improve conceptual understanding of black hole physics and General Relativity.</p>
-      
-      <p>Black holes are typically introduced through dense tensor equations and metric formulations that require advanced mathematical background. While mathematically rigorous, this approach often creates a barrier for early learners. This project explores whether visual geometric representations — specifically Penrose, Kruskal–Szekeres, and Eddington–Finkelstein diagrams — can preserve physical accuracy while improving accessibility.</p>
-
-      <p>I independently authored the full manuscript, conducted the literature review, structured the theoretical analysis, and submitted the paper for publication. The work was accepted and published in 2024.</p>
+      <ul>
+        <li>Research investigates how geometric spacetime diagrams can be used to simplify and improve conceptual understanding of black hole physics and General Relativity.</li>
+        <li>Explores whether visual geometric representations (Penrose, Kruskal–Szekeres, Eddington–Finkelstein) preserve physical accuracy while improving beginner accessibility.</li>
+        <li>Independently authored the full manuscript, conducted the literature review, structured the theoretical analysis, and submitted the paper for publication.</li>
+      </ul>
 
       <h3>Research Question</h3>
       <p><em>Which geometric spacetime diagram most effectively balances physical accuracy and educational accessibility when teaching black hole curvature?</em></p>
 
-      <h3>Technical Focus</h3>
+      <h2 style="font-size: 1.6rem; color: var(--color-text); margin-top: 32px; margin-bottom: 16px;">Project Scope & Responsibilities</h2>
       <p>The research integrates:</p>
       <ul>
         <li>Foundations of Special Relativity (Lorentz transformations, light cones, time dilation)</li>
@@ -354,10 +358,9 @@ const projects = [
         <li>Accepted for publication with 4,500+ views</li>
         <li>Contributed to discussions on improving relativity education</li>
         <li>Mentored by a KU Leuven postdoctoral researcher</li>
-        <li>Bridges advanced theoretical physics and science communication</li>
+        <li>Strengthened ability to conduct literature reviews and analyze theoretical physics frameworks</li>
+        <li>Compared coordinate systems and geometric models, communicating complex ideas clearly</li>
       </ul>
-
-      <p>This project strengthened my ability to conduct structured literature reviews, analyze advanced theoretical physics frameworks, compare coordinate systems and geometric models, communicate complex ideas clearly and rigorously, and work independently at a near-undergraduate research level.</p>
 
       <h3>Link to Publication</h3>
       <p>Read the published version here: <br>
@@ -377,85 +380,57 @@ const projects = [
 
       <p>I owned the project end-to-end.</p>
 
-      <h3>Project Scope & Responsibilities</h3>
+      <h2 style="font-size: 1.6rem; color: var(--color-text); margin-top: 32px; margin-bottom: 16px;">Project Scope & Responsibilities</h2>
       
       <h4>Structural Assessment and Redesign</h4>
-      <p>I began by inspecting the existing installation and documenting structural weaknesses in the base frame and gnomon mounting. The original support structure showed signs of warping and joint degradation due to moisture exposure. I redesigned the base geometry to improve load distribution and long-term outdoor durability while maintaining the original sundial orientation.</p>
-
-      <p>Key tasks included:</p>
       <ul>
-        <li>Reverse-engineering the existing geometry and verifying correct angular alignment of the gnomon for accurate solar timekeeping</li>
-        <li>Reinforcing the A-frame support structure for improved stiffness and stability</li>
-        <li>Recalculating and repainting hour lines to restore clarity and readability</li>
-        <li>Selecting weather-resistant materials and finishes to improve longevity</li>
+        <li>Inspected existing installation and documented structural weaknesses in base frame and gnomon mounting</li>
+        <li>Redesigned base geometry to improve load distribution and long-term outdoor durability</li>
+        <li>Reverse-engineered existing geometry to verify correct angular alignment of the gnomon</li>
+        <li>Reinforced the A-frame support structure for improved stiffness and stability</li>
+        <li>Recalculated and repainted hour lines to restore clarity and readability</li>
+        <li>Selected weather-resistant materials and finishes to improve longevity</li>
       </ul>
 
       <h4>Budgeting and Fundraising</h4>
-      <p>I developed a full materials budget covering lumber, fasteners, weather sealant, paint, hardware, and tool rentals. I sourced materials locally to minimize cost and coordinated donations to stay within budget constraints.</p>
-
-      <p>Responsibilities included:</p>
       <ul>
-        <li>Estimating total project cost</li>
-        <li>Securing funding and managing expenditures</li>
-        <li>Tracking receipts and maintaining financial documentation</li>
-        <li>Adjusting material selections when supply constraints arose</li>
+        <li>Developed full materials budget covering lumber, fasteners, sealant, paint, hardware, and tools</li>
+        <li>Sourced materials locally to minimize cost and coordinated donations</li>
+        <li>Estimated total project cost, secured funding, and managed expenditures</li>
+        <li>Balanced structural quality with cost efficiency during supply constraints</li>
       </ul>
-      <p>This required balancing structural quality with cost efficiency — a trade study in resource-constrained design.</p>
 
       <h4>Volunteer Coordination and Leadership</h4>
-      <p>I recruited and coordinated a team of volunteers to assist with demolition, sanding, painting, and assembly. I created task breakdowns, assigned responsibilities, and ensured safe work practices during fabrication and installation.</p>
-
-      <p>Leadership responsibilities included:</p>
       <ul>
-        <li>Scheduling build sessions around volunteer availability</li>
-        <li>Training volunteers on tool usage and safety procedures</li>
-        <li>Delegating tasks efficiently to maximize productivity</li>
-        <li>Maintaining morale and focus under time pressure</li>
+        <li>Recruited and coordinated team of volunteers for demolition, fabrication, and assembly</li>
+        <li>Created task breakdowns and assigned responsibilities</li>
+        <li>Scheduled build sessions and trained volunteers on tool usage and safety</li>
+        <li>Managed morale and maintained focus under strict deadlines</li>
       </ul>
-      <p>This was my first time leading a multi-person fabrication effort with a hard deadline and external stakeholder expectations.</p>
 
       <h4>Fabrication and Tooling</h4>
-      <p>The rebuild required hands-on woodworking and finishing work. Tools and processes included:</p>
       <ul>
-        <li>Circular saw and miter saw for structural cuts</li>
-        <li>Power drill and impact driver for frame assembly</li>
-        <li>Orbital sander for surface restoration</li>
-        <li>Wood filler and structural reinforcement where necessary</li>
-        <li>Exterior-grade sealant and primer</li>
-        <li>Precision masking and repainting of hour lines</li>
+        <li>Operated circular saws, miter saws, drills, and orbital sanders for structural rebuild</li>
+        <li>Applied wood filler, exterior-grade sealant, primer, and precision masking</li>
+        <li>Pivoted design approach mid-fabrication when tooling geometry tolerances failed</li>
+        <li>Redistributed tasks and simplified component features to meet impending deadlines</li>
       </ul>
-      <p>Midway through fabrication, I encountered a tooling limitation when attempting to refine curved structural elements. The rented equipment available was insufficient to achieve the curvature tolerance I initially designed for. With a fixed deadline approaching before campus construction began, I pivoted the design approach, simplified certain geometric features, and redistributed tasks to keep the project on schedule without sacrificing structural integrity.</p>
-      <p>This moment forced me to think like an engineer under constraint — adapting design to available manufacturing capability.</p>
 
       <h4>Installation and Delivery</h4>
-      <p>The final installation included:</p>
       <ul>
-        <li>Full structural rebuild of the support frame</li>
-        <li>Repainting and sealing of the sundial face</li>
-        <li>Reinforced mounting of the gnomon</li>
-        <li>Final alignment verification</li>
-        <li>On-site placement and inspection</li>
-      </ul>
-      <p>The restored sundial was delivered and approved by school administrators prior to campus construction activities.</p>
-
-      <h4>Outcomes</h4>
-      <ul>
-        <li>Restored long-term structural integrity of a deteriorating installation</li>
-        <li>Improved clarity and durability of educational features</li>
-        <li>Delivered project before construction deadline</li>
-        <li>Managed budget and material procurement independently</li>
-        <li>Led volunteers through a complete build lifecycle</li>
+        <li>Finalized full structural rebuild of the support frame</li>
+        <li>Repainted and sealed sundial face with reinforced gnomon mounting</li>
+        <li>Verified final geometric alignment on-site before official installation</li>
+        <li>Delivered restored sundial to school administrators successfully before campus construction</li>
       </ul>
 
       <h3>Lessons and Engineering Relevance</h3>
-      <p>This project fundamentally changed how I approach engineering problems. I learned that:</p>
       <ul>
-        <li>Design must adapt to manufacturing constraints</li>
-        <li>Deliverability under real deadlines matters as much as ideal geometry</li>
-        <li>Leadership means leveraging resources beyond yourself</li>
-        <li>Budget, logistics, and stakeholder alignment are engineering problems</li>
-      </ul>
-      <p>The experience strengthened my ability to manage projects under uncertainty, balance constraints, and execute from concept to physical delivery — skills directly applicable to hardware development and systems engineering.</p>`,
+        <li>Adapted designs rapidly when confronted with physical manufacturing limits</li>
+        <li>Balanced ideal geometry with realistic deliverability under strict logistical deadlines</li>
+        <li>Effectively coordinated volunteer labor, budgeting, and tool procurement</li>
+        <li>Executed complete physical lifecycle from structural assessment to delivered hardware</li>
+      </ul>`,
         pdfUrl: '#',
         featured: true,
         images: [
