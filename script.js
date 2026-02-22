@@ -730,14 +730,14 @@ function generateProjectPDF(proj) {
             .pdf-container { text-align: left; }
             .pdf-container h3 { color: #1e3a8a !important; font-size: 1.25rem; margin-top: 24px; margin-bottom: 12px; page-break-after: avoid; }
             .pdf-container h4 { color: #0f172a !important; font-size: 1.1rem; margin-top: 16px; margin-bottom: 8px; page-break-after: avoid; }
-            .pdf-container p { color: #475569 !important; line-height: 1.6; margin-bottom: 12px; page-break-inside: avoid; }
+            .pdf-container p { color: #475569 !important; line-height: 1.6; margin-bottom: 12px; }
             .pdf-container ul, .pdf-container ol { color: #475569 !important; padding-left: 24px; margin-bottom: 16px; font-size: 14px; }
-            .pdf-container li { margin-bottom: 6px; page-break-inside: avoid; }
+            .pdf-container li { margin-bottom: 6px; }
             .avoid-break { page-break-inside: avoid; display: block; width: 100%; margin-bottom: 40px; }
         </style>
         <div class="pdf-container">
-            <h1 style="color: #1e3a8a; margin-bottom: 5px; font-size: 28px; page-break-after: avoid;">${proj.title}</h1>
-            <p style="color: #0f172a; font-weight: 700; font-size: 16px; margin-bottom: 25px; page-break-after: avoid;">${proj.subtitle}</p>
+            <h1 style="color: #1e3a8a; margin-bottom: 5px; font-size: 28px;">${proj.title}</h1>
+            <p style="color: #0f172a; font-weight: 700; font-size: 16px; margin-bottom: 25px;">${proj.subtitle}</p>
             <div style="font-size: 14px; line-height: 1.6; color: #334155; margin-bottom: 30px;">
                 ${proj.description}
             </div>
@@ -767,9 +767,9 @@ function generateProjectPDF(proj) {
         margin: [0.5, 0.5, 0.5, 0.5],
         filename: `${proj.title.replace(/\s+/g, '_')}_Overview.pdf`,
         image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 1.5, useCORS: true, logging: false },
+        html2canvas: { scale: 1.2, useCORS: true, logging: false },
         jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
-        pagebreak: { mode: 'css', avoid: ['img', 'p', 'h1', 'h2', 'h3', 'h4', 'li', '.avoid-break'] }
+        pagebreak: { mode: 'css', avoid: ['.avoid-break'] }
     };
 
     html2pdf().set(opt).from(container).save();
@@ -787,9 +787,9 @@ function generateAllProjectsPDF() {
             .pdf-container { text-align: left; }
             .pdf-container h3 { color: #1e3a8a !important; font-size: 1.25rem; margin-top: 24px; margin-bottom: 12px; page-break-after: avoid; }
             .pdf-container h4 { color: #0f172a !important; font-size: 1.1rem; margin-top: 16px; margin-bottom: 8px; page-break-after: avoid; }
-            .pdf-container p { color: #475569 !important; line-height: 1.6; margin-bottom: 12px; page-break-inside: avoid; }
+            .pdf-container p { color: #475569 !important; line-height: 1.6; margin-bottom: 12px; }
             .pdf-container ul, .pdf-container ol { color: #475569 !important; padding-left: 24px; margin-bottom: 16px; font-size: 14px; }
-            .pdf-container li { margin-bottom: 6px; page-break-inside: avoid; }
+            .pdf-container li { margin-bottom: 6px; }
             .avoid-break { page-break-inside: avoid; display: block; width: 100%; margin-bottom: 40px; }
         </style>
         <div style="height: 900px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
@@ -838,9 +838,9 @@ function generateAllProjectsPDF() {
         margin: [0.5, 0.5, 0.5, 0.5],
         filename: 'Taran_Govindu_Portfolio_All_Projects.pdf',
         image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 1.5, useCORS: true, logging: false },
+        html2canvas: { scale: 1.2, useCORS: true, logging: false },
         jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
-        pagebreak: { mode: 'css', avoid: ['img', 'p', 'h1', 'h2', 'h3', 'h4', 'li', '.avoid-break'] }
+        pagebreak: { mode: 'css', avoid: ['.avoid-break'] }
     };
 
     html2pdf().set(opt).from(container).save();
