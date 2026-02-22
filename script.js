@@ -361,12 +361,7 @@ const projects = [
 
       <h3>Link to Publication</h3>
       <p>Read the published version here: <br>
-      <a href="https://nhsjs.com/2024/analysis-of-geometric-representations-used-to-simplify-spacetime-curvature-of-black-holes/" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent-light); text-decoration: underline;">The National High School Journal of Science</a></p>
-
-      <h3 style="margin-top: 40px; border-top: 1px solid var(--glass-border); padding-top: 20px;">Full Manuscript</h3>
-      <div style="width: 100%; border-radius: var(--radius); overflow: hidden; background: #fff; margin-top: 20px;">
-          <iframe src="assets/project-4/Paper Manuscript.pdf" width="100%" height="800px" style="border: none;"></iframe>
-      </div>`,
+      <a href="https://nhsjs.com/2024/analysis-of-geometric-representations-used-to-simplify-spacetime-curvature-of-black-holes/" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent-light); text-decoration: underline;">The National High School Journal of Science</a></p>`,
         pdfUrl: '#',
         featured: false,
         images: []
@@ -576,6 +571,19 @@ function openProject(proj, i) {
 
         detailGallery.appendChild(item);
     });
+
+    // Append Full Manuscript PDF for Project 4 at the very bottom
+    if (proj.id === 'project-4') {
+        const manuscriptDiv = document.createElement('div');
+        manuscriptDiv.style.width = '100%';
+        manuscriptDiv.style.marginTop = '40px';
+        manuscriptDiv.innerHTML = `
+            <div style="width: 100%; border-radius: var(--radius); overflow: hidden; background: #fff; border: 1px solid var(--glass-border);">
+                <iframe src="assets/project-4/Paper Manuscript.pdf" width="100%" height="800px" style="border: none; display: block;"></iframe>
+            </div>
+        `;
+        detailGallery.appendChild(manuscriptDiv);
+    }
 
     switchPage('project-detail');
 }
