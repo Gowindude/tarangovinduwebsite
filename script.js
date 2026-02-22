@@ -727,15 +727,17 @@ function generateProjectPDF(proj) {
     // Inject explicit CSS to override website's dark-mode text colors for standard tags
     container.innerHTML = `
         <style>
-            .pdf-container h3 { color: #1e3a8a !important; font-size: 1.25rem; margin-top: 24px; margin-bottom: 12px; }
-            .pdf-container h4 { color: #0f172a !important; font-size: 1.1rem; margin-top: 16px; margin-bottom: 8px; }
-            .pdf-container p { color: #334155 !important; line-height: 1.6; margin-bottom: 12px; }
-            .pdf-container ul, .pdf-container ol { color: #334155 !important; padding-left: 24px; margin-bottom: 16px; font-size: 14px; }
-            .pdf-container li { margin-bottom: 6px; }
+            .pdf-container { text-align: left; }
+            .pdf-container h3 { color: #1e3a8a !important; font-size: 1.25rem; margin-top: 24px; margin-bottom: 12px; page-break-after: avoid; }
+            .pdf-container h4 { color: #0f172a !important; font-size: 1.1rem; margin-top: 16px; margin-bottom: 8px; page-break-after: avoid; }
+            .pdf-container p { color: #475569 !important; line-height: 1.6; margin-bottom: 12px; page-break-inside: avoid; }
+            .pdf-container ul, .pdf-container ol { color: #475569 !important; padding-left: 24px; margin-bottom: 16px; font-size: 14px; }
+            .pdf-container li { margin-bottom: 6px; page-break-inside: avoid; }
+            .avoid-break { page-break-inside: avoid; display: block; width: 100%; margin-bottom: 40px; }
         </style>
         <div class="pdf-container">
-            <h1 style="color: #1e3a8a; margin-bottom: 5px; font-size: 28px;">${proj.title}</h1>
-            <p style="color: #0f172a; font-weight: 700; font-size: 16px; margin-bottom: 25px;">${proj.subtitle}</p>
+            <h1 style="color: #1e3a8a; margin-bottom: 5px; font-size: 28px; page-break-after: avoid;">${proj.title}</h1>
+            <p style="color: #0f172a; font-weight: 700; font-size: 16px; margin-bottom: 25px; page-break-after: avoid;">${proj.subtitle}</p>
             <div style="font-size: 14px; line-height: 1.6; color: #334155; margin-bottom: 30px;">
                 ${proj.description}
             </div>
@@ -752,8 +754,8 @@ function generateProjectPDF(proj) {
             if (!imgUrl) return;
 
             imgSection.innerHTML += `
-                <div style="margin-bottom: 40px; page-break-inside: avoid; display: inline-block; width: 100%; text-align: center;">
-                    <img src="${imgUrl}" style="max-width: 100%; max-height: 500px; object-fit: contain; border-radius: 8px; border: 1px solid #cbd5e1;" />
+                <div class="avoid-break" style="text-align: center;">
+                    <img src="${imgUrl}" style="max-width: 100%; max-height: 450px; object-fit: contain; border-radius: 8px; border: 1px solid #cbd5e1;" />
                     ${caption ? `<div style="color: #0f172a; font-size: 13px; margin-top: 10px; font-weight: 600; font-style: italic;">${caption}</div>` : ''}
                 </div>
             `;
@@ -762,12 +764,12 @@ function generateProjectPDF(proj) {
     }
 
     const opt = {
-        margin: 0.5,
+        margin: [0.5, 0.5, 0.5, 0.5],
         filename: `${proj.title.replace(/\s+/g, '_')}_Overview.pdf`,
         image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true },
+        html2canvas: { scale: 1.5, useCORS: true, logging: false },
         jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
-        pagebreak: { mode: ['css', 'legacy'] }
+        pagebreak: { mode: 'css', avoid: ['img', 'p', 'h1', 'h2', 'h3', 'h4', 'li', '.avoid-break'] }
     };
 
     html2pdf().set(opt).from(container).save();
@@ -782,13 +784,15 @@ function generateAllProjectsPDF() {
 
     container.innerHTML = `
         <style>
-            .pdf-container h3 { color: #1e3a8a !important; font-size: 1.25rem; margin-top: 24px; margin-bottom: 12px; }
-            .pdf-container h4 { color: #0f172a !important; font-size: 1.1rem; margin-top: 16px; margin-bottom: 8px; }
-            .pdf-container p { color: #334155 !important; line-height: 1.6; margin-bottom: 12px; }
-            .pdf-container ul, .pdf-container ol { color: #334155 !important; padding-left: 24px; margin-bottom: 16px; font-size: 14px; }
-            .pdf-container li { margin-bottom: 6px; }
+            .pdf-container { text-align: left; }
+            .pdf-container h3 { color: #1e3a8a !important; font-size: 1.25rem; margin-top: 24px; margin-bottom: 12px; page-break-after: avoid; }
+            .pdf-container h4 { color: #0f172a !important; font-size: 1.1rem; margin-top: 16px; margin-bottom: 8px; page-break-after: avoid; }
+            .pdf-container p { color: #475569 !important; line-height: 1.6; margin-bottom: 12px; page-break-inside: avoid; }
+            .pdf-container ul, .pdf-container ol { color: #475569 !important; padding-left: 24px; margin-bottom: 16px; font-size: 14px; }
+            .pdf-container li { margin-bottom: 6px; page-break-inside: avoid; }
+            .avoid-break { page-break-inside: avoid; display: block; width: 100%; margin-bottom: 40px; }
         </style>
-        <div style="height: 1050px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+        <div style="height: 900px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
             <h1 style="color: #1e3a8a; font-size: 44px; margin-bottom: 20px;">Engineering Portfolio</h1>
             <p style="color: #0f172a; font-weight: 700; font-size: 24px;">Taran Govindu</p>
         </div>
@@ -802,8 +806,8 @@ function generateAllProjectsPDF() {
 
         projDiv.innerHTML = `
             <div class="html2pdf__page-break"></div>
-            <h1 style="color: #1e3a8a; margin-bottom: 5px; font-size: 28px;">${proj.title}</h1>
-            <p style="color: #0f172a; font-weight: 700; font-size: 16px; margin-bottom: 25px;">${proj.subtitle}</p>
+            <h1 style="color: #1e3a8a; margin-bottom: 5px; font-size: 28px; page-break-after: avoid;">${proj.title}</h1>
+            <p style="color: #0f172a; font-weight: 700; font-size: 16px; margin-bottom: 25px; page-break-after: avoid;">${proj.subtitle}</p>
             <div style="font-size: 14px; line-height: 1.6; color: #334155; margin-bottom: 30px;">
                 ${proj.description}
             </div>
@@ -811,7 +815,7 @@ function generateAllProjectsPDF() {
 
         if (proj.images && proj.images.length > 0 && typeof proj.images[0] !== 'string') {
             const imgSection = document.createElement('div');
-            imgSection.innerHTML = '<div class="html2pdf__page-break"></div><h2 style="color: #2563eb; font-size: 22px; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; margin-top: 20px; margin-bottom: 20px;">Project Images</h2>';
+            imgSection.innerHTML = '<div class="html2pdf__page-break"></div><h2 style="color: #2563eb; font-size: 22px; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; margin-top: 20px; margin-bottom: 20px; page-break-after: avoid;">Project Images</h2>';
 
             proj.images.forEach(img => {
                 const imgUrl = typeof img === 'object' ? img.url : img;
@@ -819,8 +823,8 @@ function generateAllProjectsPDF() {
                 if (!imgUrl) return;
 
                 imgSection.innerHTML += `
-                    <div style="margin-bottom: 40px; page-break-inside: avoid; display: inline-block; width: 100%; text-align: center;">
-                        <img src="${imgUrl}" style="max-width: 100%; max-height: 500px; object-fit: contain; border-radius: 8px; border: 1px solid #cbd5e1;" />
+                    <div class="avoid-break" style="text-align: center;">
+                        <img src="${imgUrl}" style="max-width: 100%; max-height: 450px; object-fit: contain; border-radius: 8px; border: 1px solid #cbd5e1;" />
                         ${caption ? `<div style="color: #0f172a; font-size: 13px; margin-top: 10px; font-weight: 600; font-style: italic;">${caption}</div>` : ''}
                     </div>
                 `;
@@ -831,12 +835,12 @@ function generateAllProjectsPDF() {
     });
 
     const opt = {
-        margin: 0.5,
-        filename: 'Taran_Govindu_Portfolio.pdf',
+        margin: [0.5, 0.5, 0.5, 0.5],
+        filename: 'Taran_Govindu_Portfolio_All_Projects.pdf',
         image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true },
+        html2canvas: { scale: 1.5, useCORS: true, logging: false },
         jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
-        pagebreak: { mode: ['css', 'legacy'] }
+        pagebreak: { mode: 'css', avoid: ['img', 'p', 'h1', 'h2', 'h3', 'h4', 'li', '.avoid-break'] }
     };
 
     html2pdf().set(opt).from(container).save();
