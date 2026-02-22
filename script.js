@@ -283,14 +283,93 @@ const projects = [
     },
     {
         id: 'project-4',
-        title: 'Project Title Four',
-        subtitle: 'Category · Subcategory',
-        thumbnail: '',
-        heroImage: '',
-        description: `<p>Placeholder description for your fourth project.</p>`,
+        title: 'Analysis of Geometric Representations Used to Simplify Spacetime Curvature of Black Holes',
+        subtitle: 'Physics Research · Theoretical Relativity & Science Communication',
+        thumbnail: 'assets/project-4/black-hole.png',
+        heroImage: 'assets/project-4/black-hole.png',
+        description: `
+      <p><strong>Independent Researcher</strong><br>
+      Mentored by Dr. Marina David (Postdoctoral Researcher), KU Leuven<br>
+      Published in The National High School Journal of Science (2024)<br>
+      4,500+ Views</p>
+
+      <h3>Overview</h3>
+      <p>This research investigates how geometric spacetime diagrams can be used to simplify and improve conceptual understanding of black hole physics and General Relativity.</p>
+      
+      <p>Black holes are typically introduced through dense tensor equations and metric formulations that require advanced mathematical background. While mathematically rigorous, this approach often creates a barrier for early learners. This project explores whether visual geometric representations — specifically Penrose, Kruskal–Szekeres, and Eddington–Finkelstein diagrams — can preserve physical accuracy while improving accessibility.</p>
+
+      <p>I independently authored the full manuscript, conducted the literature review, structured the theoretical analysis, and submitted the paper for publication. The work was accepted and published in 2024.</p>
+
+      <h3>Research Question</h3>
+      <p><em>Which geometric spacetime diagram most effectively balances physical accuracy and educational accessibility when teaching black hole curvature?</em></p>
+
+      <h3>Technical Focus</h3>
+      <p>The research integrates:</p>
+      <ul>
+        <li>Foundations of Special Relativity (Lorentz transformations, light cones, time dilation)</li>
+        <li>General Relativity concepts (geodesics, spacetime curvature, event horizons)</li>
+        <li>Coordinate systems for Schwarzschild black holes</li>
+        <li>Analysis of coordinate singularities</li>
+        <li>Pedagogical research on visualization-based physics instruction</li>
+      </ul>
+
+      <p>The study compares three major spacetime representations:</p>
+      
+      <h4>1. Penrose Diagrams</h4>
+      <ul>
+        <li>Compactify infinite spacetime into finite regions</li>
+        <li>Show global causal structure</li>
+        <li>Useful for understanding full spacetime regions</li>
+        <li>More abstract and less intuitive for beginners</li>
+      </ul>
+
+      <h4>2. Kruskal–Szekeres Diagrams</h4>
+      <ul>
+        <li>Remove coordinate singularities</li>
+        <li>Preserve geometric structure across regions</li>
+        <li>Clearly show event horizons and singularities</li>
+        <li>Require stronger mathematical maturity</li>
+      </ul>
+
+      <h4>3. Eddington–Finkelstein Diagrams</h4>
+      <ul>
+        <li>Eliminate coordinate singularities</li>
+        <li>Emphasize ingoing/outgoing light geodesics</li>
+        <li>Clearly illustrate behavior near event horizons</li>
+        <li>Most accessible for early learners</li>
+      </ul>
+
+      <h3>Key Findings</h3>
+      <ul>
+        <li>The Eddington–Finkelstein diagram offers the strongest balance between physical fidelity and conceptual clarity.</li>
+        <li>Penrose diagrams are powerful for showing global structure but are abstract.</li>
+        <li>Kruskal–Szekeres diagrams provide strong geometric insight but demand more mathematical background.</li>
+        <li>Visual models significantly outperform purely equation-based instruction in educational studies reviewed in the paper.</li>
+        <li>Future physics education may rely more heavily on interactive simulations and computational visualization tools.</li>
+      </ul>
+
+      <h3>Impact & Contribution</h3>
+      <ul>
+        <li>Independently written and structured 10-page manuscript</li>
+        <li>Accepted for publication with 4,500+ views</li>
+        <li>Contributed to discussions on improving relativity education</li>
+        <li>Mentored by a KU Leuven postdoctoral researcher</li>
+        <li>Bridges advanced theoretical physics and science communication</li>
+      </ul>
+
+      <p>This project strengthened my ability to conduct structured literature reviews, analyze advanced theoretical physics frameworks, compare coordinate systems and geometric models, communicate complex ideas clearly and rigorously, and work independently at a near-undergraduate research level.</p>
+
+      <h3>Link to Publication</h3>
+      <p>Read the published version here: <br>
+      <a href="https://nhsjs.com/2024/analysis-of-geometric-representations-used-to-simplify-spacetime-curvature-of-black-holes/" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent-light); text-decoration: underline;">The National High School Journal of Science</a></p>
+
+      <h3 style="margin-top: 40px; border-top: 1px solid var(--glass-border); padding-top: 20px;">Full Manuscript</h3>
+      <div style="width: 100%; border-radius: var(--radius); overflow: hidden; background: #fff; margin-top: 20px;">
+          <iframe src="assets/project-4/Paper Manuscript.pdf" width="100%" height="800px" style="border: none;"></iframe>
+      </div>`,
         pdfUrl: '#',
         featured: false,
-        images: ['', '']
+        images: []
     },
     {
         id: 'project-5',
