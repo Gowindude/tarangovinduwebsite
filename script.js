@@ -577,7 +577,9 @@ function openProject(proj, i) {
         const manuscriptDiv = document.createElement('div');
         manuscriptDiv.style.width = '100%';
         manuscriptDiv.style.marginTop = '40px';
+        manuscriptDiv.style.gridColumn = '1 / -1';
         manuscriptDiv.innerHTML = `
+            <h3 style="font-size: 1.5rem; margin-bottom: 20px; color: var(--color-text);">Full Manuscript</h3>
             <div style="width: 100%; border-radius: var(--radius); overflow: hidden; background: #fff; border: 1px solid var(--glass-border);">
                 <iframe src="assets/project-4/Paper Manuscript.pdf" width="100%" height="800px" style="border: none; display: block;"></iframe>
             </div>
