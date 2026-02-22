@@ -285,8 +285,8 @@ const projects = [
         id: 'project-4',
         title: 'Analysis of Geometric Representations Used to Simplify Spacetime Curvature of Black Holes',
         subtitle: 'Physics Research · Theoretical Relativity & Science Communication',
-        thumbnail: 'assets/project-4/black-hole.png',
-        heroImage: 'assets/project-4/black-hole.png',
+        thumbnail: 'assets/project-4/Penrose DIagram.png',
+        heroImage: 'assets/project-4/Penrose DIagram.png',
         description: `
       <p><strong>Independent Researcher</strong><br>
       Mentored by Dr. Marina David (Postdoctoral Researcher), KU Leuven<br>
