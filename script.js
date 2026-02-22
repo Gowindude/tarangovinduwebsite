@@ -724,17 +724,27 @@ function generateProjectPDF(proj) {
     container.style.color = '#1e293b';
     container.style.background = '#ffffff';
 
+    // Inject explicit CSS to override website's dark-mode text colors for standard tags
     container.innerHTML = `
-        <h1 style="color: #1e3a8a; margin-bottom: 5px; font-size: 28px;">${proj.title}</h1>
-        <p style="color: #0f172a; font-weight: 700; font-size: 16px; margin-bottom: 25px;">${proj.subtitle}</p>
-        <div style="font-size: 14px; line-height: 1.6; color: #334155; margin-bottom: 30px;">
-            ${proj.description}
+        <style>
+            .pdf-container h3 { color: #1e3a8a !important; font-size: 1.25rem; margin-top: 24px; margin-bottom: 12px; }
+            .pdf-container h4 { color: #0f172a !important; font-size: 1.1rem; margin-top: 16px; margin-bottom: 8px; }
+            .pdf-container p { color: #334155 !important; line-height: 1.6; margin-bottom: 12px; }
+            .pdf-container ul, .pdf-container ol { color: #334155 !important; padding-left: 24px; margin-bottom: 16px; font-size: 14px; }
+            .pdf-container li { margin-bottom: 6px; }
+        </style>
+        <div class="pdf-container">
+            <h1 style="color: #1e3a8a; margin-bottom: 5px; font-size: 28px;">${proj.title}</h1>
+            <p style="color: #0f172a; font-weight: 700; font-size: 16px; margin-bottom: 25px;">${proj.subtitle}</p>
+            <div style="font-size: 14px; line-height: 1.6; color: #334155; margin-bottom: 30px;">
+                ${proj.description}
+            </div>
         </div>
-`;
+    `;
 
     if (proj.images && proj.images.length > 0 && typeof proj.images[0] !== 'string') {
         const imgSection = document.createElement('div');
-        imgSection.innerHTML = '<h2 style="color: #2563eb; font-size: 22px; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 20px;">Project Images</h2>';
+        imgSection.innerHTML = '<div class="html2pdf__page-break"></div><h2 style="color: #2563eb; font-size: 22px; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; margin-top: 20px; margin-bottom: 20px;">Project Images</h2>';
 
         proj.images.forEach(img => {
             const imgUrl = typeof img === 'object' ? img.url : img;
@@ -742,7 +752,7 @@ function generateProjectPDF(proj) {
             if (!imgUrl) return;
 
             imgSection.innerHTML += `
-                <div style="margin-bottom: 40px; page-break-inside: avoid; text-align: center;">
+                <div style="margin-bottom: 40px; page-break-inside: avoid; display: inline-block; width: 100%; text-align: center;">
                     <img src="${imgUrl}" style="max-width: 100%; max-height: 500px; object-fit: contain; border-radius: 8px; border: 1px solid #cbd5e1;" />
                     ${caption ? `<div style="color: #0f172a; font-size: 13px; margin-top: 10px; font-weight: 600; font-style: italic;">${caption}</div>` : ''}
                 </div>
@@ -771,19 +781,27 @@ function generateAllProjectsPDF() {
     container.style.background = '#ffffff';
 
     container.innerHTML = `
-        <div style="height: 900px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-            <h1 style="color: #1e3a8a; font-size: 40px; margin-bottom: 15px;">Engineering Portfolio</h1>
-            <p style="color: #0f172a; font-weight: 700; font-size: 20px;">Taran Govindu</p>
+        <style>
+            .pdf-container h3 { color: #1e3a8a !important; font-size: 1.25rem; margin-top: 24px; margin-bottom: 12px; }
+            .pdf-container h4 { color: #0f172a !important; font-size: 1.1rem; margin-top: 16px; margin-bottom: 8px; }
+            .pdf-container p { color: #334155 !important; line-height: 1.6; margin-bottom: 12px; }
+            .pdf-container ul, .pdf-container ol { color: #334155 !important; padding-left: 24px; margin-bottom: 16px; font-size: 14px; }
+            .pdf-container li { margin-bottom: 6px; }
+        </style>
+        <div style="height: 1050px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+            <h1 style="color: #1e3a8a; font-size: 44px; margin-bottom: 20px;">Engineering Portfolio</h1>
+            <p style="color: #0f172a; font-weight: 700; font-size: 24px;">Taran Govindu</p>
         </div>
     `;
 
     projects.forEach((proj, idx) => {
-        if (!proj.title || proj.title.includes('Title Three') || proj.title.includes('Title Four') || proj.title.includes('Title Five') || proj.title.includes('Title Six')) return;
+        if (!proj.title || proj.title.includes('Title Three') || proj.title.includes('Title Four') || proj.title.includes('Title Six')) return;
 
         const projDiv = document.createElement('div');
-        projDiv.style.pageBreakBefore = 'always';
+        projDiv.className = 'pdf-container';
 
         projDiv.innerHTML = `
+            <div class="html2pdf__page-break"></div>
             <h1 style="color: #1e3a8a; margin-bottom: 5px; font-size: 28px;">${proj.title}</h1>
             <p style="color: #0f172a; font-weight: 700; font-size: 16px; margin-bottom: 25px;">${proj.subtitle}</p>
             <div style="font-size: 14px; line-height: 1.6; color: #334155; margin-bottom: 30px;">
@@ -793,7 +811,7 @@ function generateAllProjectsPDF() {
 
         if (proj.images && proj.images.length > 0 && typeof proj.images[0] !== 'string') {
             const imgSection = document.createElement('div');
-            imgSection.innerHTML = '<h2 style="color: #2563eb; font-size: 22px; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 20px;">Project Images</h2>';
+            imgSection.innerHTML = '<div class="html2pdf__page-break"></div><h2 style="color: #2563eb; font-size: 22px; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; margin-top: 20px; margin-bottom: 20px;">Project Images</h2>';
 
             proj.images.forEach(img => {
                 const imgUrl = typeof img === 'object' ? img.url : img;
@@ -801,7 +819,7 @@ function generateAllProjectsPDF() {
                 if (!imgUrl) return;
 
                 imgSection.innerHTML += `
-                    <div style="margin-bottom: 40px; page-break-inside: avoid; text-align: center;">
+                    <div style="margin-bottom: 40px; page-break-inside: avoid; display: inline-block; width: 100%; text-align: center;">
                         <img src="${imgUrl}" style="max-width: 100%; max-height: 500px; object-fit: contain; border-radius: 8px; border: 1px solid #cbd5e1;" />
                         ${caption ? `<div style="color: #0f172a; font-size: 13px; margin-top: 10px; font-weight: 600; font-style: italic;">${caption}</div>` : ''}
                     </div>
