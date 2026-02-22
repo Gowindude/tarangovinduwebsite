@@ -725,8 +725,8 @@ function generateProjectPDF(proj) {
     container.style.background = '#ffffff';
 
     container.innerHTML = `
-    < h1 style = "color: #2563eb; margin-bottom: 5px; font-size: 28px;" > ${proj.title}</h1 >
-        <p style="color: #334155; font-weight: 600; font-size: 16px; margin-bottom: 25px;">${proj.subtitle}</p>
+        <h1 style="color: #1e3a8a; margin-bottom: 5px; font-size: 28px;">${proj.title}</h1>
+        <p style="color: #0f172a; font-weight: 700; font-size: 16px; margin-bottom: 25px;">${proj.subtitle}</p>
         <div style="font-size: 14px; line-height: 1.6; color: #334155; margin-bottom: 30px;">
             ${proj.description}
         </div>
@@ -742,21 +742,22 @@ function generateProjectPDF(proj) {
             if (!imgUrl) return;
 
             imgSection.innerHTML += `
-    < div style = "margin-bottom: 40px; page-break-inside: avoid; text-align: center;" >
-        <img src="${imgUrl}" style="max-width: 100%; max-height: 500px; object-fit: contain; border-radius: 8px; border: 1px solid #cbd5e1;" />
-                    ${caption ? `<div style="color: #334155; font-size: 13px; margin-top: 10px; font-style: italic;">${caption}</div>` : ''}
-                </div >
-    `;
+                <div style="margin-bottom: 40px; page-break-inside: avoid; text-align: center;">
+                    <img src="${imgUrl}" style="max-width: 100%; max-height: 500px; object-fit: contain; border-radius: 8px; border: 1px solid #cbd5e1;" />
+                    ${caption ? `<div style="color: #0f172a; font-size: 13px; margin-top: 10px; font-weight: 600; font-style: italic;">${caption}</div>` : ''}
+                </div>
+            `;
         });
         container.appendChild(imgSection);
     }
 
     const opt = {
         margin: 0.5,
-        filename: `${proj.title.replace(/\s+/g, '_')} _Overview.pdf`,
+        filename: `${proj.title.replace(/\s+/g, '_')}_Overview.pdf`,
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: { scale: 2, useCORS: true },
-        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
+        pagebreak: { mode: ['css', 'legacy'] }
     };
 
     html2pdf().set(opt).from(container).save();
@@ -770,10 +771,10 @@ function generateAllProjectsPDF() {
     container.style.background = '#ffffff';
 
     container.innerHTML = `
-    < div style = "height: 900px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;" >
-            <h1 style="color: #2563eb; font-size: 40px; margin-bottom: 15px;">Engineering Portfolio</h1>
-            <p style="color: #64748b; font-size: 20px;">Taran Govindu</p>
-        </div >
+        <div style="height: 900px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+            <h1 style="color: #1e3a8a; font-size: 40px; margin-bottom: 15px;">Engineering Portfolio</h1>
+            <p style="color: #0f172a; font-weight: 700; font-size: 20px;">Taran Govindu</p>
+        </div>
     `;
 
     projects.forEach((proj, idx) => {
@@ -783,12 +784,12 @@ function generateAllProjectsPDF() {
         projDiv.style.pageBreakBefore = 'always';
 
         projDiv.innerHTML = `
-    < h1 style = "color: #2563eb; margin-bottom: 5px; font-size: 28px;" > ${proj.title}</h1 >
-            <p style="color: #334155; font-weight: 600; font-size: 16px; margin-bottom: 25px;">${proj.subtitle}</p>
+            <h1 style="color: #1e3a8a; margin-bottom: 5px; font-size: 28px;">${proj.title}</h1>
+            <p style="color: #0f172a; font-weight: 700; font-size: 16px; margin-bottom: 25px;">${proj.subtitle}</p>
             <div style="font-size: 14px; line-height: 1.6; color: #334155; margin-bottom: 30px;">
                 ${proj.description}
             </div>
-`;
+        `;
 
         if (proj.images && proj.images.length > 0 && typeof proj.images[0] !== 'string') {
             const imgSection = document.createElement('div');
@@ -800,11 +801,11 @@ function generateAllProjectsPDF() {
                 if (!imgUrl) return;
 
                 imgSection.innerHTML += `
-    < div style = "margin-bottom: 40px; page-break-inside: avoid; text-align: center;" >
-        <img src="${imgUrl}" style="max-width: 100%; max-height: 500px; object-fit: contain; border-radius: 8px; border: 1px solid #cbd5e1;" />
-                        ${caption ? `<div style="color: #334155; font-size: 13px; margin-top: 10px; font-style: italic;">${caption}</div>` : ''}
-                    </div >
-    `;
+                    <div style="margin-bottom: 40px; page-break-inside: avoid; text-align: center;">
+                        <img src="${imgUrl}" style="max-width: 100%; max-height: 500px; object-fit: contain; border-radius: 8px; border: 1px solid #cbd5e1;" />
+                        ${caption ? `<div style="color: #0f172a; font-size: 13px; margin-top: 10px; font-weight: 600; font-style: italic;">${caption}</div>` : ''}
+                    </div>
+                `;
             });
             projDiv.appendChild(imgSection);
         }
@@ -816,7 +817,8 @@ function generateAllProjectsPDF() {
         filename: 'Taran_Govindu_Portfolio.pdf',
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: { scale: 2, useCORS: true },
-        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
+        pagebreak: { mode: ['css', 'legacy'] }
     };
 
     html2pdf().set(opt).from(container).save();
