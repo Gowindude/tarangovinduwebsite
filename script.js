@@ -218,8 +218,8 @@ const projects = [
         id: 'project-3',
         title: 'Custom Conservation Surveillance Drone – Design & Systems Integration',
         subtitle: 'Autonomous Systems · UAV Design & Integration',
-        thumbnail: 'assets/project-3/built-drone.png',
-        heroImage: 'assets/project-3/built-drone.png',
+        thumbnail: 'assets/project-3/dronebuilt.jpg',
+        heroImage: 'assets/project-3/dronebuilt.jpg',
         description: `
       <p>Led the end-to-end design, fabrication, assembly, and flight testing of a custom quadrotor platform intended for conservation surveillance applications. The vehicle was designed to carry a forward-facing camera system for environmental monitoring and wildlife observation while maintaining stable and efficient flight performance.</p>
       
@@ -276,9 +276,9 @@ const projects = [
         pdfUrl: '#',
         featured: true,
         images: [
-            { url: 'assets/project-3/built-drone.png', caption: 'Completed quadrotor platform configured for conservation surveillance, featuring integrated propulsion, avionics stack, and forward-facing camera system for environmental monitoring applications.' },
-            { url: 'assets/project-3/cad-assembled.png', caption: 'Fully assembled CAD model illustrating arm truss geometry, battery slot placement, avionics mounting patterns, and structural reinforcement designed for stiffness-to-weight optimization.' },
-            { url: 'assets/project-3/cad-print-layout.png', caption: 'Separated frame components prepared for additive manufacturing, showing individual arms, base plate, and structural elements arranged for efficient 3D printing and M3 fastener integration.' }
+            { url: 'assets/project-3/dronebuilt.jpg', caption: 'Completed quadrotor platform configured for conservation surveillance, featuring integrated propulsion, avionics stack, and forward-facing camera system for environmental monitoring applications.' },
+            { url: 'assets/project-3/droneframeCAD.png', caption: 'Fully assembled CAD model illustrating arm truss geometry, battery slot placement, avionics mounting patterns, and structural reinforcement designed for stiffness-to-weight optimization.' },
+            { url: 'assets/project-3/droneframePrint.png', caption: 'Separated frame components prepared for additive manufacturing, showing individual arms, base plate, and structural elements arranged for efficient 3D printing and M3 fastener integration.' }
         ]
     },
     {
