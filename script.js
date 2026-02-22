@@ -570,12 +570,12 @@ function createCard(proj, i) {
     card.setAttribute('aria-label', `View project: ${proj.title}`);
     card.style.animationDelay = `${i * 0.1}s`;
     card.innerHTML = `
-    < div class= "project-card-thumb" style = "background: ${proj.thumbnail ? `url('${proj.thumbnail}') center/cover` : gradients[i % gradients.length]}" ></div >
-    <div class="project-card-body">
-        <h3>${proj.title}</h3>
-        <p>${proj.subtitle}</p>
-    </div>
-  `;
+        <div class="project-card-thumb" style="background: ${proj.thumbnail ? `url('${proj.thumbnail}') center/cover` : gradients[i % gradients.length]}"></div>
+        <div class="project-card-body">
+            <h3>${proj.title}</h3>
+            <p>${proj.subtitle}</p>
+        </div>
+    `;
     card.addEventListener('click', () => openProject(proj, i));
     card.addEventListener('keydown', (e) => { if (e.key === 'Enter') openProject(proj, i); });
     return card;
@@ -630,13 +630,13 @@ function openProject(proj, i) {
         if (imgUrl) {
             item.style.backgroundImage = `url('${imgUrl}')`;
             if (caption) {
-                item.innerHTML = `< div class= "gallery-caption" > ${caption}</div > `;
+                item.innerHTML = `<div class="gallery-caption">${caption}</div>`;
             }
         } else {
-            item.innerHTML = `< div class= "gallery-placeholder-inner" >
-        <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-        <span>${caption || 'Image ' + (idx + 1)}</span>
-      </div > `;
+            item.innerHTML = `<div class="gallery-placeholder-inner">
+                <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                <span>${caption || 'Image ' + (idx + 1)}</span>
+            </div>`;
         }
 
         // Click to open lightbox
@@ -654,11 +654,11 @@ function openProject(proj, i) {
         manuscriptDiv.style.marginTop = '40px';
         manuscriptDiv.style.gridColumn = '1 / -1';
         manuscriptDiv.innerHTML = `
-    < h3 style = "font-size: 1.5rem; margin-bottom: 20px; color: var(--color-text);" > Full Manuscript</h3 >
-        <div style="width: 100%; border-radius: var(--radius); overflow: hidden; background: #fff; border: 1px solid var(--glass-border);">
-            <iframe src="assets/project-4/Paper Manuscript.pdf" width="100%" height="800px" style="border: none; display: block;"></iframe>
-        </div>
-`;
+            <h3 style="font-size: 1.5rem; margin-bottom: 20px; color: var(--color-text);">Full Manuscript</h3>
+            <div style="width: 100%; border-radius: var(--radius); overflow: hidden; background: #fff; border: 1px solid var(--glass-border);">
+                <iframe src="assets/project-4/Paper Manuscript.pdf" width="100%" height="800px" style="border: none; display: block;"></iframe>
+            </div>
+        `;
         detailGallery.appendChild(manuscriptDiv);
     }
 
@@ -669,11 +669,11 @@ function openProject(proj, i) {
         workbookDiv.style.marginTop = '40px';
         workbookDiv.style.gridColumn = '1 / -1';
         workbookDiv.innerHTML = `
-    < h3 style = "font-size: 1.5rem; margin-bottom: 20px; color: var(--color-text);" > Eagle Scout Project Workbook</h3 >
-        <div style="width: 100%; border-radius: var(--radius); overflow: hidden; background: #fff; border: 1px solid var(--glass-border);">
-            <iframe src="assets/project-5/EagleProjectWorkbook2024 _TaranG154.pdf" width="100%" height="800px" style="border: none; display: block;"></iframe>
-        </div>
-`;
+            <h3 style="font-size: 1.5rem; margin-bottom: 20px; color: var(--color-text);">Eagle Scout Project Workbook</h3>
+            <div style="width: 100%; border-radius: var(--radius); overflow: hidden; background: #fff; border: 1px solid var(--glass-border);">
+                <iframe src="assets/project-5/EagleProjectWorkbook2024 _TaranG154.pdf" width="100%" height="800px" style="border: none; display: block;"></iframe>
+            </div>
+        `;
         detailGallery.appendChild(workbookDiv);
     }
 
