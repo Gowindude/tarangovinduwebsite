@@ -368,14 +368,100 @@ const projects = [
     },
     {
         id: 'project-5',
-        title: 'Project Title Five',
-        subtitle: 'Category · Subcategory',
-        thumbnail: '',
-        heroImage: '',
-        description: `<p>Placeholder description for your fifth project.</p>`,
+        title: 'Restoration and Structural Rebuild of Outdoor Sundial Installation — Mattos Elementary School',
+        subtitle: 'Community Infrastructure · Structural Redesign · Project Leadership',
+        thumbnail: 'assets/project-5/eagle final.png',
+        heroImage: 'assets/project-5/eagle final.png',
+        description: `
+      <p>As my Eagle Scout service project, I led the full restoration and structural redesign of an outdoor educational sundial installation at Mattos Elementary School. The existing structure had suffered from years of weather exposure, resulting in wood rot, faded hour markings, structural instability, and inaccurate alignment. The goal was not just cosmetic repair, but to restore long-term structural integrity and educational functionality before scheduled campus construction began.</p>
+
+      <p>I owned the project end-to-end.</p>
+
+      <h3>Project Scope & Responsibilities</h3>
+      
+      <h4>Structural Assessment and Redesign</h4>
+      <p>I began by inspecting the existing installation and documenting structural weaknesses in the base frame and gnomon mounting. The original support structure showed signs of warping and joint degradation due to moisture exposure. I redesigned the base geometry to improve load distribution and long-term outdoor durability while maintaining the original sundial orientation.</p>
+
+      <p>Key tasks included:</p>
+      <ul>
+        <li>Reverse-engineering the existing geometry and verifying correct angular alignment of the gnomon for accurate solar timekeeping</li>
+        <li>Reinforcing the A-frame support structure for improved stiffness and stability</li>
+        <li>Recalculating and repainting hour lines to restore clarity and readability</li>
+        <li>Selecting weather-resistant materials and finishes to improve longevity</li>
+      </ul>
+
+      <h4>Budgeting and Fundraising</h4>
+      <p>I developed a full materials budget covering lumber, fasteners, weather sealant, paint, hardware, and tool rentals. I sourced materials locally to minimize cost and coordinated donations to stay within budget constraints.</p>
+
+      <p>Responsibilities included:</p>
+      <ul>
+        <li>Estimating total project cost</li>
+        <li>Securing funding and managing expenditures</li>
+        <li>Tracking receipts and maintaining financial documentation</li>
+        <li>Adjusting material selections when supply constraints arose</li>
+      </ul>
+      <p>This required balancing structural quality with cost efficiency — a trade study in resource-constrained design.</p>
+
+      <h4>Volunteer Coordination and Leadership</h4>
+      <p>I recruited and coordinated a team of volunteers to assist with demolition, sanding, painting, and assembly. I created task breakdowns, assigned responsibilities, and ensured safe work practices during fabrication and installation.</p>
+
+      <p>Leadership responsibilities included:</p>
+      <ul>
+        <li>Scheduling build sessions around volunteer availability</li>
+        <li>Training volunteers on tool usage and safety procedures</li>
+        <li>Delegating tasks efficiently to maximize productivity</li>
+        <li>Maintaining morale and focus under time pressure</li>
+      </ul>
+      <p>This was my first time leading a multi-person fabrication effort with a hard deadline and external stakeholder expectations.</p>
+
+      <h4>Fabrication and Tooling</h4>
+      <p>The rebuild required hands-on woodworking and finishing work. Tools and processes included:</p>
+      <ul>
+        <li>Circular saw and miter saw for structural cuts</li>
+        <li>Power drill and impact driver for frame assembly</li>
+        <li>Orbital sander for surface restoration</li>
+        <li>Wood filler and structural reinforcement where necessary</li>
+        <li>Exterior-grade sealant and primer</li>
+        <li>Precision masking and repainting of hour lines</li>
+      </ul>
+      <p>Midway through fabrication, I encountered a tooling limitation when attempting to refine curved structural elements. The rented equipment available was insufficient to achieve the curvature tolerance I initially designed for. With a fixed deadline approaching before campus construction began, I pivoted the design approach, simplified certain geometric features, and redistributed tasks to keep the project on schedule without sacrificing structural integrity.</p>
+      <p>This moment forced me to think like an engineer under constraint — adapting design to available manufacturing capability.</p>
+
+      <h4>Installation and Delivery</h4>
+      <p>The final installation included:</p>
+      <ul>
+        <li>Full structural rebuild of the support frame</li>
+        <li>Repainting and sealing of the sundial face</li>
+        <li>Reinforced mounting of the gnomon</li>
+        <li>Final alignment verification</li>
+        <li>On-site placement and inspection</li>
+      </ul>
+      <p>The restored sundial was delivered and approved by school administrators prior to campus construction activities.</p>
+
+      <h4>Outcomes</h4>
+      <ul>
+        <li>Restored long-term structural integrity of a deteriorating installation</li>
+        <li>Improved clarity and durability of educational features</li>
+        <li>Delivered project before construction deadline</li>
+        <li>Managed budget and material procurement independently</li>
+        <li>Led volunteers through a complete build lifecycle</li>
+      </ul>
+
+      <h3>Lessons and Engineering Relevance</h3>
+      <p>This project fundamentally changed how I approach engineering problems. I learned that:</p>
+      <ul>
+        <li>Design must adapt to manufacturing constraints</li>
+        <li>Deliverability under real deadlines matters as much as ideal geometry</li>
+        <li>Leadership means leveraging resources beyond yourself</li>
+        <li>Budget, logistics, and stakeholder alignment are engineering problems</li>
+      </ul>
+      <p>The experience strengthened my ability to manage projects under uncertainty, balance constraints, and execute from concept to physical delivery — skills directly applicable to hardware development and systems engineering.</p>`,
         pdfUrl: '#',
-        featured: false,
-        images: ['']
+        featured: true,
+        images: [
+            { url: 'assets/project-5/eaglebeforevsafter.png', caption: 'Front-facing comparison showing restored hour markings, reinforced support structure, and reinforcement for long-term outdoor durability.' },
+            { url: 'assets/project-5/eagle final.png', caption: 'Completed sundial installation following full structural restoration and repainting.' }
+        ]
     },
     {
         id: 'project-6',
@@ -585,6 +671,21 @@ function openProject(proj, i) {
             </div>
         `;
         detailGallery.appendChild(manuscriptDiv);
+    }
+
+    // Append Workbook PDF for Project 5
+    if (proj.id === 'project-5') {
+        const workbookDiv = document.createElement('div');
+        workbookDiv.style.width = '100%';
+        workbookDiv.style.marginTop = '40px';
+        workbookDiv.style.gridColumn = '1 / -1';
+        workbookDiv.innerHTML = `
+            <h3 style="font-size: 1.5rem; margin-bottom: 20px; color: var(--color-text);">Eagle Scout Project Workbook</h3>
+            <div style="width: 100%; border-radius: var(--radius); overflow: hidden; background: #fff; border: 1px solid var(--glass-border);">
+                <iframe src="assets/project-5/EagleProjectWorkbook2024 _TaranG154.pdf" width="100%" height="800px" style="border: none; display: block;"></iframe>
+            </div>
+        `;
+        detailGallery.appendChild(workbookDiv);
     }
 
     switchPage('project-detail');
