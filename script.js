@@ -361,6 +361,11 @@ const projects = [
 
       <h3>Link to Publication</h3>
       <p>Read the published version here: <br>
+      <a href="https://nhsjs.com/2024/analysis-of-geometric-representations-used-to-simplify-spacetime-curvature-of-black-holes/" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent-light); text-decoration: underline;">The National High School Journal of Science</a></p>`,
+        pdfUrl: '#',
+        featured: false,
+        images: []
+    },
     {
         id: 'project-5',
         title: 'Restoration and Rebuild of Sundials',
@@ -368,7 +373,7 @@ const projects = [
         thumbnail: 'assets/project-5/eagle final.png',
         heroImage: 'assets/project-5/eagle final.png',
         description: `
-            < p > As my Eagle Scout service project, I led the full restoration and structural redesign of an outdoor educational sundial installation at Mattos Elementary School.The existing structure had suffered from years of weather exposure, resulting in wood rot, faded hour markings, structural instability, and inaccurate alignment.The goal was not just cosmetic repair, but to restore long- term structural integrity and educational functionality before scheduled campus construction began.</p >
+      <p>As my Eagle Scout service project, I led the full restoration and structural redesign of an outdoor educational sundial installation at Mattos Elementary School. The existing structure had suffered from years of weather exposure, resulting in wood rot, faded hour markings, structural instability, and inaccurate alignment. The goal was not just cosmetic repair, but to restore long-term structural integrity and educational functionality before scheduled campus construction began.</p>
 
       <p>I owned the project end-to-end.</p>
 
@@ -562,8 +567,8 @@ function createCard(proj, i) {
     card.className = 'project-card';
     card.setAttribute('tabindex', '0');
     card.setAttribute('role', 'button');
-    card.setAttribute('aria-label', `View project: ${ proj.title }`);
-    card.style.animationDelay = `${ i * 0.1}s`;
+    card.setAttribute('aria-label', `View project: ${proj.title}`);
+    card.style.animationDelay = `${i * 0.1}s`;
     card.innerHTML = `
     < div class= "project-card-thumb" style = "background: ${proj.thumbnail ? `url('${proj.thumbnail}') center/cover` : gradients[i % gradients.length]}" ></div >
     <div class="project-card-body">
@@ -625,7 +630,7 @@ function openProject(proj, i) {
         if (imgUrl) {
             item.style.backgroundImage = `url('${imgUrl}')`;
             if (caption) {
-                item.innerHTML = `< div class= "gallery-caption" > ${ caption }</div > `;
+                item.innerHTML = `< div class= "gallery-caption" > ${caption}</div > `;
             }
         } else {
             item.innerHTML = `< div class= "gallery-placeholder-inner" >
@@ -720,7 +725,7 @@ function generateProjectPDF(proj) {
     container.style.background = '#ffffff';
 
     container.innerHTML = `
-    < h1 style = "color: #2563eb; margin-bottom: 5px; font-size: 28px;" > ${ proj.title }</h1 >
+    < h1 style = "color: #2563eb; margin-bottom: 5px; font-size: 28px;" > ${proj.title}</h1 >
         <p style="color: #334155; font-weight: 600; font-size: 16px; margin-bottom: 25px;">${proj.subtitle}</p>
         <div style="font-size: 14px; line-height: 1.6; color: #334155; margin-bottom: 30px;">
             ${proj.description}
@@ -739,7 +744,7 @@ function generateProjectPDF(proj) {
             imgSection.innerHTML += `
     < div style = "margin-bottom: 40px; page-break-inside: avoid; text-align: center;" >
         <img src="${imgUrl}" style="max-width: 100%; max-height: 500px; object-fit: contain; border-radius: 8px; border: 1px solid #cbd5e1;" />
-                    ${ caption ? `<div style="color: #334155; font-size: 13px; margin-top: 10px; font-style: italic;">${caption}</div>` : '' }
+                    ${caption ? `<div style="color: #334155; font-size: 13px; margin-top: 10px; font-style: italic;">${caption}</div>` : ''}
                 </div >
     `;
         });
@@ -748,7 +753,7 @@ function generateProjectPDF(proj) {
 
     const opt = {
         margin: 0.5,
-        filename: `${ proj.title.replace(/\s+/g, '_') } _Overview.pdf`,
+        filename: `${proj.title.replace(/\s+/g, '_')} _Overview.pdf`,
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: { scale: 2, useCORS: true },
         jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
@@ -778,7 +783,7 @@ function generateAllProjectsPDF() {
         projDiv.style.pageBreakBefore = 'always';
 
         projDiv.innerHTML = `
-    < h1 style = "color: #2563eb; margin-bottom: 5px; font-size: 28px;" > ${ proj.title }</h1 >
+    < h1 style = "color: #2563eb; margin-bottom: 5px; font-size: 28px;" > ${proj.title}</h1 >
             <p style="color: #334155; font-weight: 600; font-size: 16px; margin-bottom: 25px;">${proj.subtitle}</p>
             <div style="font-size: 14px; line-height: 1.6; color: #334155; margin-bottom: 30px;">
                 ${proj.description}
@@ -797,7 +802,7 @@ function generateAllProjectsPDF() {
                 imgSection.innerHTML += `
     < div style = "margin-bottom: 40px; page-break-inside: avoid; text-align: center;" >
         <img src="${imgUrl}" style="max-width: 100%; max-height: 500px; object-fit: contain; border-radius: 8px; border: 1px solid #cbd5e1;" />
-                        ${ caption ? `<div style="color: #334155; font-size: 13px; margin-top: 10px; font-style: italic;">${caption}</div>` : '' }
+                        ${caption ? `<div style="color: #334155; font-size: 13px; margin-top: 10px; font-style: italic;">${caption}</div>` : ''}
                     </div >
     `;
             });
