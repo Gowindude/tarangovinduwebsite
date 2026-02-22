@@ -216,14 +216,70 @@ const projects = [
     },
     {
         id: 'project-3',
-        title: 'Project Title Three',
-        subtitle: 'Category · Subcategory',
-        thumbnail: '',
-        heroImage: '',
-        description: `<p>Placeholder description for your third project.</p><p>Add technical details, methodologies, and results here.</p>`,
+        title: 'Custom Conservation Surveillance Drone – Design & Systems Integration',
+        subtitle: 'Autonomous Systems · UAV Design & Integration',
+        thumbnail: 'assets/project-3/built-drone.png',
+        heroImage: 'assets/project-3/built-drone.png',
+        description: `
+      <p>Led the end-to-end design, fabrication, assembly, and flight testing of a custom quadrotor platform intended for conservation surveillance applications. The vehicle was designed to carry a forward-facing camera system for environmental monitoring and wildlife observation while maintaining stable and efficient flight performance.</p>
+      
+      <p>The project emphasized full-stack vehicle development — from structural design and propulsion selection to electronics integration and flight controller tuning — resulting in a functional multirotor platform capable of stable, repeatable flight and onboard visual data collection.</p>
+
+      <h3>Objectives</h3>
+      <ul>
+        <li>Design a lightweight, structurally efficient 3D-printable quadrotor frame</li>
+        <li>Integrate a forward-facing camera system for conservation surveillance</li>
+        <li>Select propulsion and avionics components within cost and weight constraints</li>
+        <li>Teach and mentor students in CAD, electronics, and UAV systems</li>
+        <li>Achieve stable and reliable flight suitable for environmental monitoring</li>
+      </ul>
+
+      <h3>Structural & CAD Design</h3>
+      <p>Designed a custom 3D-printable frame in CAD with the following constraints:</p>
+      <ul>
+        <li>30.5 mm × 30.5 mm mounting pattern for flight controller stack</li>
+        <li>20 mm × 20 mm mounting pattern for VTX</li>
+        <li>Dedicated forward camera mounting holes</li>
+        <li>35 mm × 79 mm top slot for battery placement</li>
+        <li>All motor and structural interfaces designed for M3 screw integration</li>
+      </ul>
+      <p>The arm geometry was optimized for stiffness-to-weight ratio using truss-style reinforcement while maintaining manufacturability through standard FDM printing.</p>
+
+      <h3>Systems Integration</h3>
+      <p>Performed full component integration including:</p>
+      <ul>
+        <li>Brushless motors and propeller selection</li>
+        <li>Electronic Speed Controller configuration</li>
+        <li>Battery and power distribution layout</li>
+        <li>Receiver and radio pairing</li>
+        <li>Soldering and electrical routing</li>
+        <li>ExpressLRS flight controller configuration and tuning</li>
+      </ul>
+      <p>Created a detailed component spreadsheet tracking cost, mass, dimensions, mounting requirements, and compatibility constraints. This ensured total system mass and power draw remained within safe operating limits.</p>
+
+      <h3>Flight Testing & Validation</h3>
+      <ul>
+        <li>Configured and tuned flight controller parameters for stable hover and maneuverability</li>
+        <li>Conducted initial test flights to validate thrust-to-weight ratio and control response</li>
+        <li>Iterated on battery mounting and wire routing to improve CG balance and vibration isolation</li>
+        <li>Achieved consistent, repeatable flight performance under manual and stabilized control modes</li>
+      </ul>
+
+      <h3>Leadership & Mentorship</h3>
+      <ul>
+        <li>Taught CAD modeling principles and parametric design</li>
+        <li>Guided students through electronics soldering and integration</li>
+        <li>Demonstrated systems-level thinking across mechanical, electrical, and software domains</li>
+        <li>Managed component procurement and build sequencing</li>
+      </ul>
+      <p>This project demonstrated the ability to translate conceptual vehicle design into functional hardware while mentoring others through the process.</p>`,
         pdfUrl: '#',
         featured: true,
-        images: ['', '']
+        images: [
+            { url: 'assets/project-3/built-drone.png', caption: 'Completed quadrotor platform configured for conservation surveillance, featuring integrated propulsion, avionics stack, and forward-facing camera system for environmental monitoring applications.' },
+            { url: 'assets/project-3/cad-assembled.png', caption: 'Fully assembled CAD model illustrating arm truss geometry, battery slot placement, avionics mounting patterns, and structural reinforcement designed for stiffness-to-weight optimization.' },
+            { url: 'assets/project-3/cad-print-layout.png', caption: 'Separated frame components prepared for additive manufacturing, showing individual arms, base plate, and structural elements arranged for efficient 3D printing and M3 fastener integration.' }
+        ]
     },
     {
         id: 'project-4',
