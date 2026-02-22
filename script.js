@@ -82,7 +82,7 @@ window.addEventListener('scroll', () => {
 const projects = [
     {
         id: 'project-1',
-        title: 'Single-Stage Model Rocket: Design, Simulation & Flight Validation',
+        title: 'Model Rocket: Design, Simulation & Flight Validation',
         subtitle: 'Flight Dynamics · Simulation · Rapid Prototyping · Experimental Validation',
         thumbnail: 'assets/project-1/rocketpostlaunch.jpg',
         heroImage: 'assets/project-1/openrocketsim.png',
@@ -216,7 +216,7 @@ const projects = [
     },
     {
         id: 'project-3',
-        title: 'Custom Conservation Surveillance Drone – Design & Systems Integration',
+        title: 'Conservation Surveillance Drone: Design & Systems Integration',
         subtitle: 'Autonomous Systems · UAV Design & Integration',
         thumbnail: 'assets/project-3/dronebuilt.jpg',
         heroImage: 'assets/project-3/dronebuilt.jpg',
@@ -283,7 +283,7 @@ const projects = [
     },
     {
         id: 'project-4',
-        title: 'Analysis of Geometric Representations Used to Simplify Spacetime Curvature of Black Holes',
+        title: 'Published Research Paper: Visually Representing Black Holes',
         subtitle: 'Physics Research · Theoretical Relativity & Science Communication',
         thumbnail: 'assets/project-4/Penrose DIagram.png',
         heroImage: 'assets/project-4/Penrose DIagram.png',
@@ -368,7 +368,7 @@ const projects = [
     },
     {
         id: 'project-5',
-        title: 'Restoration and Structural Rebuild of Outdoor Sundial Installation — Mattos Elementary School',
+        title: 'Restoration and Rebuild of Sundials',
         subtitle: 'Community Infrastructure · Structural Redesign · Project Leadership',
         thumbnail: 'assets/project-5/eagle final.png',
         heroImage: 'assets/project-5/eagle final.png',
