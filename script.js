@@ -86,356 +86,73 @@ const projects = [
         subtitle: 'Flight Dynamics · Simulation · Rapid Prototyping · Experimental Validation',
         thumbnail: 'assets/project-1/rocketpostlaunch.jpg',
         heroImage: 'assets/project-1/openrocketsim.png',
-        description: `
-      <h3>Overview</h3>
-      <p>This project involved the full lifecycle design, simulation, manufacturing, and launch of a single-stage model rocket with a target apogee of <strong>125 ft</strong> while carrying a Perf[...]
-      <p>The project combined <strong>OpenRocket</strong> aerodynamic and flight simulation, <strong>SolidWorks</strong> CAD modeling, <strong>3D printing</strong> and rapid iteration, mass proper[...]
-
-      <h3>Objectives</h3>
-      <ul>
-        <li>Reach a target apogee of 125 ft</li>
-        <li>Maintain a stability margin between 1.0–2.0 calibers</li>
-        <li>Successfully integrate and protect an onboard altimeter</li>
-        <li>Compare predicted flight performance to measured flight data</li>
-      </ul>
-
-      <h2 style="font-size: 1.6rem; color: var(--color-text); margin-top: 32px; margin-bottom: 16px;">Project Scope & Responsibilities</h2>
-      <p>I owned this project end-to-end. I was the <strong>primary designer of the payload bay</strong> and led its development from simulation constraints to physical implementation. Responsibi[...]
-
-      <h3>Simulation & Design</h3>
-      <p>The vehicle was iteratively modified in OpenRocket to approach the 125 ft target while maintaining stable flight. Design variables included nose cone geometry (ogive selected), payload b[...]
-      <p>A motor trade study evaluated the <strong>1/2A3T</strong>, <strong>1/2A6-2</strong>, and <strong>A8-3</strong>. The 1/2A6-2 was selected based on predicted apogee and stability tradeoffs[...]
-      <p><strong>Final simulated performance:</strong> Predicted apogee ~117 ft | Stability margin: 1.77 calibers</p>
-
-      <h3>Vehicle Configuration</h3>
-      <p>Total height: 28 cm | Payload bay: 21 mm ID, 1.2 mm wall thickness | 3 fins at 2.2 cm height | Measured mass (with motor): 34.45 g | Measured CG: ~14.5 cm from nose tip</p>
-
-      <h3>Manufacturing & Iteration</h3>
-      <p>The payload bay and nose cone were modeled in SolidWorks and 3D printed. The development process required multiple design iterations: adjusted shoulder diameters, modified tab geometry, [...]
-      <p><em>Engineering loop: Simulation → CAD → Print → Fit Test → Modify → Reprint</em></p>
-
-      <h3>Flight Test & Validation</h3>
-      <p><strong>Predicted apogee:</strong> 117 ft<br>
-      <strong>Measured apogee:</strong> 81 ft<br>
-      <strong>Deviation:</strong> ~31% lower than predicted</p>
-      <p>Despite the altitude deviation, the rocket maintained stable, linear ascent, achieved proper recovery deployment, and successfully protected the altimeter. Contributors to the performanc[...]
-
-      <h3>Key Takeaways</h3>
-      <ul>
-        <li>Small geometric changes significantly affect stability margin and drag</li>
-        <li>Launch boundary conditions can meaningfully alter predicted apogee</li>
-        <li>Manufacturing tolerances influence aerodynamic performance</li>
-        <li>Experimental validation is critical for closing the sim-to-flight gap</li>
-        <li>Iterative engineering is essential when moving from simulation to hardware</li>
-      </ul>`,
-        pdfUrl: '#',
         featured: true,
+        description: `<h3>What?</h3><ul><li>Full lifecycle design, simulation, manufacturing, and launch of a single-stage model rocket targeting 125 ft apogee with an onboard altimeter</li><li>Core goal was validating how closely simulation predictions matched real flight performance</li></ul><h3>How?</h3><ul><li>Designed vehicle iteratively in OpenRocket with a motor trade study across three candidates</li><li>Designed and 3D printed payload bay and nose cone in SolidWorks across multiple tolerance iterations</li><li>Performed mass property and CG analysis to validate 1.77 caliber stability margin</li></ul><h3>Results?</h3><ul><li>Predicted 117 ft | Measured 81 ft | Stability margin 1.77 cal</li><li>Stable ascent, successful recovery, altimeter protected</li><li>31% deviation quantified and attributed to launch friction, wind, and streamer packing</li></ul>`,
+        pdfUrl: '#',
         images: [
-            { url: 'assets/project-1/openrocketsim.png', caption: 'OpenRocket model showing CG and CP placement with predicted 117 ft apogee and 1.77 caliber stability margin.' },
-            { url: 'assets/project-1/solidworkspayloadbay.png', caption: 'Custom 3D-printed payload bay designed for aerodynamic performance and altimeter integration.' },
-            { url: 'assets/project-1/solidworksnosecone.png', caption: 'Ogive nose cone modeled in SolidWorks for optimal aerodynamic performance.' },
-            { url: 'assets/project-1/solidworksfinholder.png', caption: 'SolidWorks fin holder component for structural mounting and alignment.' },
-            { url: 'assets/project-1/masscgbreakdown.png', caption: 'Component-level mass property breakdown used to compute CG and validate stability requirements.' },
-            { url: 'assets/project-1/rocketpostlaunch.jpg', caption: 'Fully assembled vehicle after flight test. Stable ascent and successful recovery were observed.' },
-            { url: 'assets/project-1/rocketpostlaunch(disassembled).jpg', caption: 'Disassembled rocket showing internal payload bay, body tube, and recovery system components.' }
+            { url: 'assets/project-1/openrocketsim.png', caption: 'OpenRocket simulation of rocket.' },
+            { url: 'assets/project-1/solidworkspayloadbay.png', caption: 'CAD models of payload bay, nose cone, fin holder.' },
+            { url: 'assets/project-1/solidworksnosecone.png', caption: 'CAD models of payload bay, nose cone, fin holder.' },
+            { url: 'assets/project-1/solidworksfinholder.png', caption: 'CAD models of payload bay, nose cone, fin holder.' },
+            { url: 'assets/project-1/masscgbreakdown.png', caption: 'Mass and CG breakdown used to validate stability margin.' },
+            { url: 'assets/project-1/rocketpostlaunch.jpg', caption: 'Disassembled rocket post-launch, showing recovery mechanism.' },
+            { url: 'assets/project-1/rocketpostlaunch(disassembled).jpg', caption: 'Final assembled rocket before launch.' }
         ]
     },
     {
         id: 'project-2',
-        title: 'Balsa Wood Glider Design',
-        subtitle: 'Aerodynamics · Flight Vehicle Design',
+        title: 'Balsa Wood Glider',
+        subtitle: 'Aerodynamics · Flight Vehicle Design · Iterative Testing',
         thumbnail: 'assets/project-2/early design.png',
         heroImage: 'assets/project-2/early design.png',
-        description: `
-      <p>Designed, built, and flight-tested a hand-launched balsa wood glider to maximize forward flight distance under strict geometric, structural, and aerodynamic constraints. The project requ[...]
-      
-      <p>The final glider achieved flights averaging 45–50 feet during testing, exceeding the 20-foot minimum requirement, with quantitative validation of wing loading, aspect ratio, and stabil[...]
-
-      <h2 style="font-size: 1.6rem; color: var(--color-text); margin-top: 32px; margin-bottom: 16px;">Project Scope & Responsibilities</h2>
-      <ul>
-        <li>Maximize forward flight distance</li>
-        <li>Meet strict size (16 in × 16 in) and structural constraints</li>
-        <li>Maintain &gt;50% balsa wood by weight</li>
-        <li>Achieve high aerodynamic efficiency while ensuring longitudinal stability</li>
-        <li>Document full engineering design process</li>
-      </ul>
-
-      <h3>Key Design Decisions</h3>
-      <h4>High Aspect Ratio Wing</h4>
-      <ul>
-        <li>Wingspan: 22 in</li>
-        <li>Chord: 1.5 in</li>
-        <li>Aspect Ratio: ~12.5</li>
-        <li>Reduced induced drag to improve glide efficiency</li>
-      </ul>
-
-      <h4>Low Conventional Tail Configuration</h4>
-      <ul>
-        <li>Horizontal stabilizer mounted at slight downward incidence (~10° initial concept)</li>
-        <li>Positioned CG approximately 0.25 in ahead of quarter-chord for longitudinal stability</li>
-      </ul>
-
-      <h4>Lightweight Construction Strategy</h4>
-      <ul>
-        <li>Total mass: 17 g</li>
-        <li>Wing loading: 0.092 g/cm² (well below 0.5 g/cm² limit)</li>
-        <li>Wood mass fraction: 52.9%</li>
-      </ul>
-
-      <h3>Aerodynamic Analysis</h3>
-      <p>Estimated aerodynamic coefficients using first-order approximations:</p>
-      <ul>
-        <li>Lift coefficient (C<sub>L</sub>) ≈ 2.19</li>
-        <li>Drag coefficient (C<sub>D</sub>) ≈ 0.176</li>
-        <li>Zero-lift drag ≈ 0.03</li>
-        <li>Induced drag calculated using AR = 12.5 and Oswald efficiency factor ≈ 0.85</li>
-      </ul>
-      <p>Wing loading and aspect ratio calculations were performed to validate compliance with performance constraints and predict glide efficiency.</p>
-
-      <h3>Design Iterations</h3>
-      <ul>
-        <li>Adjusted wing placement along fuselage to optimize CG location</li>
-        <li>Iteratively modified ballast mass (Play-Doh) for trim stability</li>
-        <li>Evaluated dihedral implementation but avoided structural risk due to thin balsa</li>
-        <li>Reinforced weak joints after structural failure during late-stage testing</li>
-      </ul>
-      <p>Structural failure of one wing and vertical stabilizer immediately prior to final trials negatively impacted measured performance but validated structural tradeoffs between weight and du[...]
-
-      <h3>Results</h3>
-      <ul>
-        <li>Average test flight distance: 45–50 ft</li>
-        <li>Official measured flights: 30–35 ft (post-damage condition)</li>
-        <li>Stable longitudinal behavior with CG positioned ahead of quarter-chord</li>
-        <li>Successful compliance with all geometric and mass constraints</li>
-      </ul>`,
-        pdfUrl: '#',
         featured: true,
+        description: `<h3>What?</h3><ul><li>Designed, built, and flight-tested a hand-launched balsa glider to maximize flight distance under strict size, mass, and material constraints</li><li>Iterative engineering: continuously refining design, trim, and structure based on test results</li></ul><h3>How?</h3><ul><li>Selected AR ~12.5 wing to minimize induced drag; placed CG 0.25 in ahead of quarter-chord for longitudinal stability</li><li>Iterated ballast placement for trim, reinforced joints during late-stage testing</li><li>Manufactured with laser cutter on balsa wood</li></ul><h3>Results?</h3><ul><li>Test flights averaged 45-50 ft, exceeding the 20 ft minimum by over 2x</li><li>All geometric, mass, and material constraints satisfied</li><li>Co-authored a full technical design report</li></ul>`,
+        pdfUrl: '#',
         images: [
-            { url: 'assets/project-2/early design.png', caption: 'Initial assembly of fuselage-wing joint with temporary rubber band constraint used to test alignment and structural fit prior to [...]
-            { url: 'assets/project-2/center of gravity testing.png', caption: 'Fuselage marked for iterative CG positioning during longitudinal stability testing. Wing placement was adjusted incr[...]
-            { url: 'assets/project-2/play-doh tuning.png', caption: 'Play-Doh ballast added and repositioned during flight testing to tune pitch stability and trim condition.' },
-            { url: 'assets/project-2/finalized sketch.png', caption: 'Final planform geometry drafted to verify 16 in × 16 in constraint compliance and visualize wing aspect ratio and tail confi[...]
-            { url: 'assets/project-2/finalflightconfig.png', caption: 'Final trim setup with secured ballast used to tune center of gravity for stable, high-efficiency glide performance.' }
+            { url: 'assets/project-2/early design.png', caption: 'Early glider, testing out different masses and positions of clay.' },
+            { url: 'assets/project-2/center of gravity testing.png', caption: 'Markings and rubber band to test position and alignment of wing.' },
+            { url: 'assets/project-2/play-doh tuning.png', caption: 'Tape repairs after test flights, ensuring consistent results.' },
+            { url: 'assets/project-2/finalized sketch.png', caption: 'Glider sketch in Adobe.' },
+            { url: 'assets/project-2/finalflightconfig.png', caption: 'Final glider complete with modifications.' }
         ]
     },
     {
         id: 'project-3',
-        title: 'Conservation Surveillance Drone: Design & Systems Integration',
-        subtitle: 'Autonomous Systems · UAV Design & Integration',
+        title: 'Conservation Surveillance Drone',
+        subtitle: 'UAV Design · Systems Integration · Flight Testing',
         thumbnail: 'assets/project-3/dronebuilt.jpg',
         heroImage: 'assets/project-3/dronebuilt.jpg',
-        description: `
-      <p>Led the end-to-end design, fabrication, assembly, and flight testing of a custom quadrotor platform intended for conservation surveillance applications. The vehicle was designed to carry[...]
-      
-      <p>The project emphasized full-stack vehicle development — from structural design and propulsion selection to electronics integration and flight controller tuning — resulting in a funct[...]
-
-      <h3>Objectives</h3>
-      <ul>
-        <li>Design a lightweight, structurally efficient 3D-printable quadrotor frame</li>
-        <li>Integrate a forward-facing camera system for conservation surveillance</li>
-        <li>Select propulsion and avionics components within cost and weight constraints</li>
-        <li>Teach and mentor students in CAD, electronics, and UAV systems</li>
-        <li>Achieve stable and reliable flight suitable for environmental monitoring</li>
-      </ul>
-
-      <h3>Structural & CAD Design</h3>
-      <p>Designed a custom 3D-printable frame in CAD with the following constraints:</p>
-      <ul>
-        <li>30.5 mm × 30.5 mm mounting pattern for flight controller stack</li>
-        <li>20 mm × 20 mm mounting pattern for VTX</li>
-        <li>Dedicated forward camera mounting holes</li>
-        <li>35 mm × 79 mm top slot for battery placement</li>
-        <li>All motor and structural interfaces designed for M3 screw integration</li>
-      </ul>
-      <p>The arm geometry was optimized for stiffness-to-weight ratio using truss-style reinforcement while maintaining manufacturability through standard FDM printing.</p>
-
-      <h3>Systems Integration</h3>
-      <p>Performed full component integration including:</p>
-      <ul>
-        <li>Brushless motors and propeller selection</li>
-        <li>Electronic Speed Controller configuration</li>
-        <li>Battery and power distribution layout</li>
-        <li>Receiver and radio pairing</li>
-        <li>Soldering and electrical routing</li>
-        <li>ExpressLRS flight controller configuration and tuning</li>
-      </ul>
-      <p>Created a detailed component spreadsheet tracking cost, mass, dimensions, mounting requirements, and compatibility constraints. This ensured total system mass and power draw remained wit[...]
-
-      <h3>Flight Testing & Validation</h3>
-      <ul>
-        <li>Configured and tuned flight controller parameters for stable hover and maneuverability</li>
-        <li>Conducted initial test flights to validate thrust-to-weight ratio and control response</li>
-        <li>Iterated on battery mounting and wire routing to improve CG balance and vibration isolation</li>
-        <li>Achieved consistent, repeatable flight performance under manual and stabilized control modes</li>
-      </ul>
-
-      <h2 style="font-size: 1.6rem; color: var(--color-text); margin-top: 32px; margin-bottom: 16px;">Project Scope & Responsibilities</h2>
-      <ul>
-        <li>Taught CAD modeling principles and parametric design</li>
-        <li>Guided students through electronics soldering and integration</li>
-        <li>Demonstrated systems-level thinking across mechanical, electrical, and software domains</li>
-        <li>Managed component procurement and build sequencing</li>
-        <li>Translated conceptual vehicle design into functional hardware while mentoring others through the process</li>
-      </ul>`,
-        pdfUrl: '#',
         featured: true,
+        description: `<h3>What?</h3><ul><li>Designed, built, and flight-tested a custom quadrotor for environmental monitoring</li><li>Full-stack build: frame design, propulsion selection, avionics integration, and flight controller tuning</li></ul><h3>How?</h3><ul><li>Designed a custom 3D-printable frame with truss-style arms optimized for stiffness-to-weight</li><li>Integrated full avionics stack including ESCs, ExpressLRS flight controller, and receiver; performed all soldering</li><li>Tuned flight controller through iterative test flights</li></ul><h3>Results?</h3><ul><li>Stable, repeatable flight achieved under manual and stabilized control modes</li><li>All mass, power, and structural constraints met within budget</li><li>Donation to local regional park for continued use</li></ul>`,
+        pdfUrl: '#',
         images: [
-            { url: 'assets/project-3/dronebuilt.jpg', caption: 'Completed quadrotor platform configured for conservation surveillance, featuring integrated propulsion, avionics stack, and forward[...]
-            { url: 'assets/project-3/droneframeCAD.png', caption: 'Fully assembled CAD model illustrating arm truss geometry, battery slot placement, avionics mounting patterns, and structural re[...]
-            { url: 'assets/project-3/droneframePrint.png', caption: 'Separated frame components prepared for additive manufacturing, showing individual arms, base plate, and structural elements a[...]
+            { url: 'assets/project-3/dronebuilt.jpg', caption: 'Completed drone configured for conservation surveillance, featuring integrated propulsion, avionics stack, and camera system for environmental monitoring.' },
+            { url: 'assets/project-3/droneframeCAD.png', caption: 'Drone frame CAD model in SolidWorks.' },
+            { url: 'assets/project-3/droneframePrint.png', caption: 'Drone parts layout for 3D printing.' }
         ]
     },
     {
         id: 'project-4',
-        title: 'Published Research Paper: Visually Representing Black Holes',
-        subtitle: 'Physics Research · Theoretical Relativity & Science Communication',
+        title: 'Published Research: Visually Representing Black Holes',
+        subtitle: 'Theoretical Physics · Science Communication · Peer-Reviewed Publication',
         thumbnail: 'assets/project-4/Penrose DIagram.png',
         heroImage: 'assets/project-4/Penrose DIagram.png',
-        description: `
-      <p><strong>Independent Researcher</strong><br>
-      Mentored by Dr. Marina David (Postdoctoral Researcher), KU Leuven<br>
-      Published in The National High School Journal of Science (2024)<br>
-      4,500+ Views</p>
-
-      <h3>Overview</h3>
-      <ul>
-        <li>Research investigates how geometric spacetime diagrams can be used to simplify and improve conceptual understanding of black hole physics and General Relativity.</li>
-        <li>Explores whether visual geometric representations (Penrose, Kruskal–Szekeres, Eddington–Finkelstein) preserve physical accuracy while improving beginner accessibility.</li>
-        <li>Independently authored the full manuscript, conducted the literature review, structured the theoretical analysis, and submitted the paper for publication.</li>
-      </ul>
-
-      <h3>Research Question</h3>
-      <p><em>Which geometric spacetime diagram most effectively balances physical accuracy and educational accessibility when teaching black hole curvature?</em></p>
-
-      <h2 style="font-size: 1.6rem; color: var(--color-text); margin-top: 32px; margin-bottom: 16px;">Project Scope & Responsibilities</h2>
-      <p>The research integrates:</p>
-      <ul>
-        <li>Foundations of Special Relativity (Lorentz transformations, light cones, time dilation)</li>
-        <li>General Relativity concepts (geodesics, spacetime curvature, event horizons)</li>
-        <li>Coordinate systems for Schwarzschild black holes</li>
-        <li>Analysis of coordinate singularities</li>
-        <li>Pedagogical research on visualization-based physics instruction</li>
-      </ul>
-
-      <p>The study compares three major spacetime representations:</p>
-      
-      <h4>1. Penrose Diagrams</h4>
-      <ul>
-        <li>Compactify infinite spacetime into finite regions</li>
-        <li>Show global causal structure</li>
-        <li>Useful for understanding full spacetime regions</li>
-        <li>More abstract and less intuitive for beginners</li>
-      </ul>
-
-      <h4>2. Kruskal–Szekeres Diagrams</h4>
-      <ul>
-        <li>Remove coordinate singularities</li>
-        <li>Preserve geometric structure across regions</li>
-        <li>Clearly show event horizons and singularities</li>
-        <li>Require stronger mathematical maturity</li>
-      </ul>
-
-      <h4>3. Eddington–Finkelstein Diagrams</h4>
-      <ul>
-        <li>Eliminate coordinate singularities</li>
-        <li>Emphasize ingoing/outgoing light geodesics</li>
-        <li>Clearly illustrate behavior near event horizons</li>
-        <li>Most accessible for early learners</li>
-      </ul>
-
-      <h3>Key Findings</h3>
-      <ul>
-        <li>The Eddington–Finkelstein diagram offers the strongest balance between physical fidelity and conceptual clarity.</li>
-        <li>Penrose diagrams are powerful for showing global structure but are abstract.</li>
-        <li>Kruskal–Szekeres diagrams provide strong geometric insight but demand more mathematical background.</li>
-        <li>Visual models significantly outperform purely equation-based instruction in educational studies reviewed in the paper.</li>
-        <li>Future physics education may rely more heavily on interactive simulations and computational visualization tools.</li>
-      </ul>
-
-      <h3>Impact & Contribution</h3>
-      <ul>
-        <li>Independently written and structured 10-page manuscript</li>
-        <li>Accepted for publication with 4,500+ views</li>
-        <li>Contributed to discussions on improving relativity education</li>
-        <li>Mentored by a KU Leuven postdoctoral researcher</li>
-        <li>Strengthened ability to conduct literature reviews and analyze theoretical physics frameworks</li>
-        <li>Compared coordinate systems and geometric models, communicating complex ideas clearly</li>
-      </ul>
-
-      <h3>Link to Publication</h3>
-      <p>Read the published version here: <br>
-      <a href="https://nhsjs.com/2024/analysis-of-geometric-representations-used-to-simplify-spacetime-curvature-of-black-holes/" target="_blank" rel="noopener noreferrer" style="color: var(--col[...]
-        `,
-        pdfUrl: '#',
         featured: false,
+        description: `<h3>What?</h3><ul><li>Independently authored and published a peer-reviewed paper on geometric spacetime diagrams as educational tools for teaching black hole physics</li><li>Mentored by Dr. Marina David (Postdoctoral Researcher, KU Leuven); published in The National High School Journal of Science with 4,500+ views</li></ul><h3>How?</h3><ul><li>Conducted full literature review and comparative analysis of Penrose, Kruskal-Szekeres, and Eddington-Finkelstein diagrams</li><li>Evaluated each representation for physical accuracy and accessibility to early learners</li><li>Independently structured and wrote the full 10-page manuscript through submission</li></ul><h3>Results?</h3><ul><li>Accepted for publication with 4,500+ views</li><li>Found Eddington-Finkelstein diagrams offer the strongest balance between physical fidelity and conceptual clarity</li><li>Contributed to discussions on improving relativity education at the high school level</li></ul><p style="margin-top:1.5rem;">Read the published paper: <a href="https://nhsjs.com/2024/analysis-of-geometric-representations-used-to-simplify-spacetime-curvature-of-black-holes/" target="_blank" rel="noopener noreferrer" style="color:var(--color-accent-light);text-decoration:underline;">The National High School Journal of Science</a></p>`,
+        pdfUrl: '#',
         images: []
     },
     {
         id: 'project-5',
-        title: 'Restoration and Rebuild of Sundials',
-        subtitle: 'Community Infrastructure · Structural Redesign · Project Leadership',
+        title: 'Eagle Scout Project: Sundial Restoration',
+        subtitle: 'Structural Redesign · Project Leadership · Community Infrastructure',
         thumbnail: 'assets/project-5/eagle final.png',
         heroImage: 'assets/project-5/eagle final.png',
-        description: `
-      <p>As my Eagle Scout service project, I led the full restoration and structural redesign of an outdoor educational sundial installation at Mattos Elementary School. The existing structure h[...]
-
-      <p>I owned the project end-to-end.</p>
-
-      <h2 style="font-size: 1.6rem; color: var(--color-text); margin-top: 32px; margin-bottom: 16px;">Project Scope & Responsibilities</h2>
-      
-      <h4>Structural Assessment and Redesign</h4>
-      <ul>
-        <li>Inspected existing installation and documented structural weaknesses in base frame and gnomon mounting</li>
-        <li>Redesigned base geometry to improve load distribution and long-term outdoor durability</li>
-        <li>Reverse-engineered existing geometry to verify correct angular alignment of the gnomon</li>
-        <li>Reinforced the A-frame support structure for improved stiffness and stability</li>
-        <li>Recalculated and repainted hour lines to restore clarity and readability</li>
-        <li>Selected weather-resistant materials and finishes to improve longevity</li>
-      </ul>
-
-      <h4>Budgeting and Fundraising</h4>
-      <ul>
-        <li>Developed full materials budget covering lumber, fasteners, sealant, paint, hardware, and tools</li>
-        <li>Sourced materials locally to minimize cost and coordinated donations</li>
-        <li>Estimated total project cost, secured funding, and managed expenditures</li>
-        <li>Balanced structural quality with cost efficiency during supply constraints</li>
-      </ul>
-
-      <h4>Volunteer Coordination and Leadership</h4>
-      <ul>
-        <li>Recruited and coordinated team of volunteers for demolition, fabrication, and assembly</li>
-        <li>Created task breakdowns and assigned responsibilities</li>
-        <li>Scheduled build sessions and trained volunteers on tool usage and safety</li>
-        <li>Managed morale and maintained focus under strict deadlines</li>
-      </ul>
-
-      <h4>Fabrication and Tooling</h4>
-      <ul>
-        <li>Operated circular saws, miter saws, drills, and orbital sanders for structural rebuild</li>
-        <li>Applied wood filler, exterior-grade sealant, primer, and precision masking</li>
-        <li>Pivoted design approach mid-fabrication when tooling geometry tolerances failed</li>
-        <li>Redistributed tasks and simplified component features to meet impending deadlines</li>
-      </ul>
-
-      <h4>Installation and Delivery</h4>
-      <ul>
-        <li>Finalized full structural rebuild of the support frame</li>
-        <li>Repainted and sealed sundial face with reinforced gnomon mounting</li>
-        <li>Verified final geometric alignment on-site before official installation</li>
-        <li>Delivered restored sundial to school administrators successfully before campus construction</li>
-      </ul>
-
-      <h3>Lessons and Engineering Relevance</h3>
-      <ul>
-        <li>Adapted designs rapidly when confronted with physical manufacturing limits</li>
-        <li>Balanced ideal geometry with realistic deliverability under strict logistical deadlines</li>
-        <li>Effectively coordinated volunteer labor, budgeting, and tool procurement</li>
-        <li>Executed complete physical lifecycle from structural assessment to delivered hardware</li>
-      </ul>`,
-        pdfUrl: '#',
         featured: true,
+        description: `<h3>What?</h3><ul><li>Led full restoration and structural redesign of an outdoor educational sundial installation at Mattos Elementary School</li><li>Managed end-to-end: structural assessment, fabrication, volunteer coordination, budgeting, and on-site installation</li></ul><h3>How?</h3><ul><li>Reverse-engineered existing geometry to verify correct angular alignment of the gnomon; redesigned base for improved load distribution</li><li>Recruited and coordinated volunteers, managed materials budget, and operated saws, drills, and sanders for full structural rebuild</li><li>Pivoted design approach mid-fabrication when tooling tolerances failed; redistributed tasks to meet deadline</li></ul><h3>Results?</h3><ul><li>Fully restored sundial delivered to school administrators before campus construction deadline</li><li>Reinforced structure, repainted hour lines, and sealed for long-term outdoor durability</li><li>Earned Eagle Scout rank</li></ul>`,
+        pdfUrl: '#',
         images: [
-            { url: 'assets/project-5/eaglebeforevsafter.png', caption: 'Front-facing comparison showing restored hour markings, reinforced support structure, and reinforcement for long-term outdo[...]
+            { url: 'assets/project-5/eaglebeforevsafter.png', caption: 'Front-facing comparison showing restored hour markings and reinforced support structure.' },
             { url: 'assets/project-5/eagle final.png', caption: 'Completed sundial installation following full structural restoration and repainting.' }
         ]
     },
@@ -446,28 +163,8 @@ const projects = [
         thumbnail: 'assets/IMG_3584.png',
         heroImage: 'assets/IMG_3584.png',
         featured: true,
-        description: `
-      <h3>Overview</h3>
-      <p>Designed a custom servo-actuated ball valve assembly for the Propulsive Landers rocket club propulsion feed system, replacing an existing ~5 lb electric motor actuator with a solution weighing ~0.7 lb — an ~85% mass reduction per actuator, saving ~16 lbs across all 4 PFS valves.</p>
-
-      <h3>What?</h3>
-      <ul>
-        <li>Designing a custom servo-actuated ball valve assembly for a rocket club propulsion feed system</li>
-        <li>Replacing existing actuation solution with a new setup, working under a strict 5.5 lb mass budget</li>
-      </ul>
-
-      <h3>How?</h3>
-      <ul>
-        <li>Sized servo from first principles using torque requirements derived from valve geometry</li>
-        <li>Modeled three design iterations in SolidWorks, incorporating feedback from structures and propulsion leads</li>
-        <li>Managing full project lifecycle from constraints analysis through 3D printing and assembly</li>
-      </ul>
-
-      <h3>Results?</h3>
-      <ul>
-        <li>~85% mass reduction per actuator, saving ~16 lbs across all 4 PFS valves</li>
-        <li>Final configuration selected for implementation; hardware testing in progress</li>
-      </ul>`,
+        description: `<h3>What?</h3><ul><li>Designing a custom servo-actuated ball valve assembly for a rocket club propulsion feed system</li><li>Replacing existing actuation solution with a new setup, working under a strict 5.5 lb mass budget</li></ul><h3>How?</h3><ul><li>Sized servo from first principles using torque requirements derived from valve geometry</li><li>Modeled three design iterations in SolidWorks, incorporating feedback from structures and propulsion leads</li><li>Managing full project lifecycle from constraints analysis through 3D printing and assembly</li></ul><h3>Results?</h3><ul><li>~85% mass reduction per actuator, saving ~16 lbs across all 4 PFS valves</li><li>Final configuration selected for implementation; hardware testing in progress</li></ul>`,
+        pdfUrl: '#',
         images: [
             { url: 'assets/IMG_3584.png', caption: 'Servo mount iteration with direct mounting to valve: custom stand and connection to valve.' },
             { url: 'assets/IMG_3587.png', caption: 'Direct mounting iteration with servo using metal hardware.' },
@@ -481,29 +178,8 @@ const projects = [
         thumbnail: 'assets/IMG_3588.jpeg',
         heroImage: 'assets/IMG_3588.jpeg',
         featured: true,
-        description: `
-      <h3>Overview</h3>
-      <p>Self-contained drone detection system built in under 36 hours for under $25, with no WiFi or external dependencies. Processes audio in real time and outputs a confidence score for drone presence.</p>
-
-      <h3>What?</h3>
-      <ul>
-        <li>Self-contained drone detection system built in under 36 hours for under $25, no WiFi or external dependencies</li>
-        <li>Processes audio in real time and outputs a confidence score for drone presence</li>
-      </ul>
-
-      <h3>How?</h3>
-      <ul>
-        <li>Reverse-engineered a speaker as a microphone using acoustic reciprocity after no reliable mic was available</li>
-        <li>3D printed a mathematically calculated parabolic dish to maximize signal capture</li>
-        <li>Trained a deep learning model on 20,000+ audio samples in Python, ported to C++ to run entirely on an ESP32 microcontroller</li>
-      </ul>
-
-      <h3>Results?</h3>
-      <ul>
-        <li>Over 80% classification accuracy, fully functional on-device with no external compute</li>
-        <li>Drone audio detected from 15-20 ft using a makeshift microphone</li>
-        <li>Full inference pipeline running on a single ESP32 microcontroller</li>
-      </ul>`,
+        description: `<h3>What?</h3><ul><li>Self-contained drone detection system built in under 36 hours for under $25, no WiFi or external dependencies</li><li>Processes audio in real time and outputs a confidence score for drone presence</li></ul><h3>How?</h3><ul><li>Reverse-engineered a speaker as a microphone using acoustic reciprocity after no reliable mic was available</li><li>3D printed a mathematically calculated parabolic dish to maximize signal capture</li><li>Trained a deep learning model on 20,000+ audio samples in Python, ported to C++ to run entirely on an ESP32 microcontroller</li></ul><h3>Results?</h3><ul><li>Over 80% classification accuracy, fully functional on-device with no external compute</li><li>Drone audio detected from 15-20 ft using a makeshift microphone</li><li>Full inference pipeline running on a single ESP32 microcontroller</li></ul>`,
+        pdfUrl: '#',
         images: [
             { url: 'assets/IMG_3590.jpeg', caption: 'Detection system and optional display reacting to drone audio.' },
             { url: 'assets/IMG_3588.jpeg', caption: 'Fully assembled detection system with printed dish and electronics.' },
