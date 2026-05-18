@@ -88,8 +88,8 @@ const projects = [
         heroImage: 'assets/project-1/openrocketsim.png',
         description: `
       <h3>Overview</h3>
-      <p>This project involved the full lifecycle design, simulation, manufacturing, and launch of a single-stage model rocket with a target apogee of <strong>125 ft</strong> while carrying a PerfectFlite Pnut altimeter payload. The objective was not only to reach a target altitude, but to validate how closely simulation predictions matched real-world performance.</p>
-      <p>The project combined <strong>OpenRocket</strong> aerodynamic and flight simulation, <strong>SolidWorks</strong> CAD modeling, <strong>3D printing</strong> and rapid iteration, mass property analysis and CG validation, and experimental flight testing with performance comparison.</p>
+      <p>This project involved the full lifecycle design, simulation, manufacturing, and launch of a single-stage model rocket with a target apogee of <strong>125 ft</strong> while carrying a Perf[...]
+      <p>The project combined <strong>OpenRocket</strong> aerodynamic and flight simulation, <strong>SolidWorks</strong> CAD modeling, <strong>3D printing</strong> and rapid iteration, mass proper[...]
 
       <h3>Objectives</h3>
       <ul>
@@ -100,25 +100,25 @@ const projects = [
       </ul>
 
       <h2 style="font-size: 1.6rem; color: var(--color-text); margin-top: 32px; margin-bottom: 16px;">Project Scope & Responsibilities</h2>
-      <p>I owned this project end-to-end. I was the <strong>primary designer of the payload bay</strong> and led its development from simulation constraints to physical implementation. Responsibilities included designing and dimensioning the payload bay in SolidWorks, integrating altimeter geometry and retention constraints, iterating fit tolerances across multiple print cycles, performing mass and CG calculations to validate stability margins, and contributing to post-flight performance analysis.</p>
+      <p>I owned this project end-to-end. I was the <strong>primary designer of the payload bay</strong> and led its development from simulation constraints to physical implementation. Responsibi[...]
 
       <h3>Simulation & Design</h3>
-      <p>The vehicle was iteratively modified in OpenRocket to approach the 125 ft target while maintaining stable flight. Design variables included nose cone geometry (ogive selected), payload bay dimensions, body tube length, fin height/count, and motor selection.</p>
-      <p>A motor trade study evaluated the <strong>1/2A3T</strong>, <strong>1/2A6-2</strong>, and <strong>A8-3</strong>. The 1/2A6-2 was selected based on predicted apogee and stability tradeoffs.</p>
+      <p>The vehicle was iteratively modified in OpenRocket to approach the 125 ft target while maintaining stable flight. Design variables included nose cone geometry (ogive selected), payload b[...]
+      <p>A motor trade study evaluated the <strong>1/2A3T</strong>, <strong>1/2A6-2</strong>, and <strong>A8-3</strong>. The 1/2A6-2 was selected based on predicted apogee and stability tradeoffs[...]
       <p><strong>Final simulated performance:</strong> Predicted apogee ~117 ft | Stability margin: 1.77 calibers</p>
 
       <h3>Vehicle Configuration</h3>
       <p>Total height: 28 cm | Payload bay: 21 mm ID, 1.2 mm wall thickness | 3 fins at 2.2 cm height | Measured mass (with motor): 34.45 g | Measured CG: ~14.5 cm from nose tip</p>
 
       <h3>Manufacturing & Iteration</h3>
-      <p>The payload bay and nose cone were modeled in SolidWorks and 3D printed. The development process required multiple design iterations: adjusted shoulder diameters, modified tab geometry, and transitioned from loose fit to standard fit after testing.</p>
+      <p>The payload bay and nose cone were modeled in SolidWorks and 3D printed. The development process required multiple design iterations: adjusted shoulder diameters, modified tab geometry, [...]
       <p><em>Engineering loop: Simulation → CAD → Print → Fit Test → Modify → Reprint</em></p>
 
       <h3>Flight Test & Validation</h3>
       <p><strong>Predicted apogee:</strong> 117 ft<br>
       <strong>Measured apogee:</strong> 81 ft<br>
       <strong>Deviation:</strong> ~31% lower than predicted</p>
-      <p>Despite the altitude deviation, the rocket maintained stable, linear ascent, achieved proper recovery deployment, and successfully protected the altimeter. Contributors to the performance gap included launch rod friction, wind conditions, minor mass discrepancies, and streamer packing inefficiencies.</p>
+      <p>Despite the altitude deviation, the rocket maintained stable, linear ascent, achieved proper recovery deployment, and successfully protected the altimeter. Contributors to the performanc[...]
 
       <h3>Key Takeaways</h3>
       <ul>
@@ -147,9 +147,9 @@ const projects = [
         thumbnail: 'assets/project-2/early design.png',
         heroImage: 'assets/project-2/early design.png',
         description: `
-      <p>Designed, built, and flight-tested a hand-launched balsa wood glider to maximize forward flight distance under strict geometric, structural, and aerodynamic constraints. The project required satisfying aspect ratio, wing loading, material composition, and size limits while achieving stable and efficient unpowered flight.</p>
+      <p>Designed, built, and flight-tested a hand-launched balsa wood glider to maximize forward flight distance under strict geometric, structural, and aerodynamic constraints. The project requ[...]
       
-      <p>The final glider achieved flights averaging 45–50 feet during testing, exceeding the 20-foot minimum requirement, with quantitative validation of wing loading, aspect ratio, and stability criteria.</p>
+      <p>The final glider achieved flights averaging 45–50 feet during testing, exceeding the 20-foot minimum requirement, with quantitative validation of wing loading, aspect ratio, and stabil[...]
 
       <h2 style="font-size: 1.6rem; color: var(--color-text); margin-top: 32px; margin-bottom: 16px;">Project Scope & Responsibilities</h2>
       <ul>
@@ -199,7 +199,7 @@ const projects = [
         <li>Evaluated dihedral implementation but avoided structural risk due to thin balsa</li>
         <li>Reinforced weak joints after structural failure during late-stage testing</li>
       </ul>
-      <p>Structural failure of one wing and vertical stabilizer immediately prior to final trials negatively impacted measured performance but validated structural tradeoffs between weight and durability.</p>
+      <p>Structural failure of one wing and vertical stabilizer immediately prior to final trials negatively impacted measured performance but validated structural tradeoffs between weight and du[...]
 
       <h3>Results</h3>
       <ul>
@@ -211,10 +211,10 @@ const projects = [
         pdfUrl: '#',
         featured: true,
         images: [
-            { url: 'assets/project-2/early design.png', caption: 'Initial assembly of fuselage-wing joint with temporary rubber band constraint used to test alignment and structural fit prior to final bonding.' },
-            { url: 'assets/project-2/center of gravity testing.png', caption: 'Fuselage marked for iterative CG positioning during longitudinal stability testing. Wing placement was adjusted incrementally to optimize glide performance.' },
+            { url: 'assets/project-2/early design.png', caption: 'Initial assembly of fuselage-wing joint with temporary rubber band constraint used to test alignment and structural fit prior to [...]
+            { url: 'assets/project-2/center of gravity testing.png', caption: 'Fuselage marked for iterative CG positioning during longitudinal stability testing. Wing placement was adjusted incr[...]
             { url: 'assets/project-2/play-doh tuning.png', caption: 'Play-Doh ballast added and repositioned during flight testing to tune pitch stability and trim condition.' },
-            { url: 'assets/project-2/finalized sketch.png', caption: 'Final planform geometry drafted to verify 16 in × 16 in constraint compliance and visualize wing aspect ratio and tail configuration.' },
+            { url: 'assets/project-2/finalized sketch.png', caption: 'Final planform geometry drafted to verify 16 in × 16 in constraint compliance and visualize wing aspect ratio and tail confi[...]
             { url: 'assets/project-2/finalflightconfig.png', caption: 'Final trim setup with secured ballast used to tune center of gravity for stable, high-efficiency glide performance.' }
         ]
     },
@@ -225,9 +225,9 @@ const projects = [
         thumbnail: 'assets/project-3/dronebuilt.jpg',
         heroImage: 'assets/project-3/dronebuilt.jpg',
         description: `
-      <p>Led the end-to-end design, fabrication, assembly, and flight testing of a custom quadrotor platform intended for conservation surveillance applications. The vehicle was designed to carry a forward-facing camera system for environmental monitoring and wildlife observation while maintaining stable and efficient flight performance.</p>
+      <p>Led the end-to-end design, fabrication, assembly, and flight testing of a custom quadrotor platform intended for conservation surveillance applications. The vehicle was designed to carry[...]
       
-      <p>The project emphasized full-stack vehicle development — from structural design and propulsion selection to electronics integration and flight controller tuning — resulting in a functional multirotor platform capable of stable, repeatable flight and onboard visual data collection.</p>
+      <p>The project emphasized full-stack vehicle development — from structural design and propulsion selection to electronics integration and flight controller tuning — resulting in a funct[...]
 
       <h3>Objectives</h3>
       <ul>
@@ -259,7 +259,7 @@ const projects = [
         <li>Soldering and electrical routing</li>
         <li>ExpressLRS flight controller configuration and tuning</li>
       </ul>
-      <p>Created a detailed component spreadsheet tracking cost, mass, dimensions, mounting requirements, and compatibility constraints. This ensured total system mass and power draw remained within safe operating limits.</p>
+      <p>Created a detailed component spreadsheet tracking cost, mass, dimensions, mounting requirements, and compatibility constraints. This ensured total system mass and power draw remained wit[...]
 
       <h3>Flight Testing & Validation</h3>
       <ul>
@@ -280,9 +280,9 @@ const projects = [
         pdfUrl: '#',
         featured: true,
         images: [
-            { url: 'assets/project-3/dronebuilt.jpg', caption: 'Completed quadrotor platform configured for conservation surveillance, featuring integrated propulsion, avionics stack, and forward-facing camera system for environmental monitoring applications.' },
-            { url: 'assets/project-3/droneframeCAD.png', caption: 'Fully assembled CAD model illustrating arm truss geometry, battery slot placement, avionics mounting patterns, and structural reinforcement designed for stiffness-to-weight optimization.' },
-            { url: 'assets/project-3/droneframePrint.png', caption: 'Separated frame components prepared for additive manufacturing, showing individual arms, base plate, and structural elements arranged for efficient 3D printing and M3 fastener integration.' }
+            { url: 'assets/project-3/dronebuilt.jpg', caption: 'Completed quadrotor platform configured for conservation surveillance, featuring integrated propulsion, avionics stack, and forward[...]
+            { url: 'assets/project-3/droneframeCAD.png', caption: 'Fully assembled CAD model illustrating arm truss geometry, battery slot placement, avionics mounting patterns, and structural re[...]
+            { url: 'assets/project-3/droneframePrint.png', caption: 'Separated frame components prepared for additive manufacturing, showing individual arms, base plate, and structural elements a[...]
         ]
     },
     {
@@ -364,7 +364,7 @@ const projects = [
 
       <h3>Link to Publication</h3>
       <p>Read the published version here: <br>
-      <a href="https://nhsjs.com/2024/analysis-of-geometric-representations-used-to-simplify-spacetime-curvature-of-black-holes/" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent-light); text-decoration: underline;">The National High School Journal of Science</a></p>`,
+      <a href="https://nhsjs.com/2024/analysis-of-geometric-representations-used-to-simplify-spacetime-curvature-of-black-holes/" target="_blank" rel="noopener noreferrer" style="color: var(--col[...]
         pdfUrl: '#',
         featured: false,
         images: []
@@ -376,7 +376,7 @@ const projects = [
         thumbnail: 'assets/project-5/eagle final.png',
         heroImage: 'assets/project-5/eagle final.png',
         description: `
-      <p>As my Eagle Scout service project, I led the full restoration and structural redesign of an outdoor educational sundial installation at Mattos Elementary School. The existing structure had suffered from years of weather exposure, resulting in wood rot, faded hour markings, structural instability, and inaccurate alignment. The goal was not just cosmetic repair, but to restore long-term structural integrity and educational functionality before scheduled campus construction began.</p>
+      <p>As my Eagle Scout service project, I led the full restoration and structural redesign of an outdoor educational sundial installation at Mattos Elementary School. The existing structure h[...]
 
       <p>I owned the project end-to-end.</p>
 
@@ -434,8 +434,80 @@ const projects = [
         pdfUrl: '#',
         featured: true,
         images: [
-            { url: 'assets/project-5/eaglebeforevsafter.png', caption: 'Front-facing comparison showing restored hour markings, reinforced support structure, and reinforcement for long-term outdoor durability.' },
+            { url: 'assets/project-5/eaglebeforevsafter.png', caption: 'Front-facing comparison showing restored hour markings, reinforced support structure, and reinforcement for long-term outdo[...]
             { url: 'assets/project-5/eagle final.png', caption: 'Completed sundial installation following full structural restoration and repainting.' }
+        ]
+    },
+    {
+        id: 'project-6',
+        title: 'Servo-Actuated Ball Valve Assembly',
+        subtitle: 'Propulsion Systems · Mechanical Design · SolidWorks',
+        thumbnail: 'assets/IMG_3584.png',
+        heroImage: 'assets/IMG_3584.png',
+        featured: true,
+        description: `
+      <h3>Overview</h3>
+      <p>Designed a custom servo-actuated ball valve assembly for the Propulsive Landers rocket club propulsion feed system, replacing an existing ~5 lb electric motor actuator with a solution weighing ~0.7 lb — an ~85% mass reduction per actuator, saving ~16 lbs across all 4 PFS valves.</p>
+
+      <h3>What?</h3>
+      <ul>
+        <li>Designing a custom servo-actuated ball valve assembly for a rocket club propulsion feed system</li>
+        <li>Replacing existing actuation solution with a new setup, working under a strict 5.5 lb mass budget</li>
+      </ul>
+
+      <h3>How?</h3>
+      <ul>
+        <li>Sized servo from first principles using torque requirements derived from valve geometry</li>
+        <li>Modeled three design iterations in SolidWorks, incorporating feedback from structures and propulsion leads</li>
+        <li>Managing full project lifecycle from constraints analysis through 3D printing and assembly</li>
+      </ul>
+
+      <h3>Results?</h3>
+      <ul>
+        <li>~85% mass reduction per actuator, saving ~16 lbs across all 4 PFS valves</li>
+        <li>Final configuration selected for implementation; hardware testing in progress</li>
+      </ul>`,
+        images: [
+            { url: 'assets/IMG_3584.png', caption: 'Servo mount iteration with direct mounting to valve: custom stand and connection to valve.' },
+            { url: 'assets/IMG_3587.png', caption: 'Direct mounting iteration with servo using metal hardware.' },
+            { url: 'assets/IMG_3585.png', caption: 'Iteration using gears to reduce required torque from servo: custom gears, hex mount, and plates with metal adapters.' }
+        ]
+    },
+    {
+        id: 'project-7',
+        title: 'Acoustic Drone Detection System',
+        subtitle: 'Embedded Systems · Machine Learning · CAD · 36-Hour Hackathon',
+        thumbnail: 'assets/IMG_3588.jpeg',
+        heroImage: 'assets/IMG_3588.jpeg',
+        featured: true,
+        description: `
+      <h3>Overview</h3>
+      <p>Self-contained drone detection system built in under 36 hours for under $25, with no WiFi or external dependencies. Processes audio in real time and outputs a confidence score for drone presence.</p>
+
+      <h3>What?</h3>
+      <ul>
+        <li>Self-contained drone detection system built in under 36 hours for under $25, no WiFi or external dependencies</li>
+        <li>Processes audio in real time and outputs a confidence score for drone presence</li>
+      </ul>
+
+      <h3>How?</h3>
+      <ul>
+        <li>Reverse-engineered a speaker as a microphone using acoustic reciprocity after no reliable mic was available</li>
+        <li>3D printed a mathematically calculated parabolic dish to maximize signal capture</li>
+        <li>Trained a deep learning model on 20,000+ audio samples in Python, ported to C++ to run entirely on an ESP32 microcontroller</li>
+      </ul>
+
+      <h3>Results?</h3>
+      <ul>
+        <li>Over 80% classification accuracy, fully functional on-device with no external compute</li>
+        <li>Drone audio detected from 15-20 ft using a makeshift microphone</li>
+        <li>Full inference pipeline running on a single ESP32 microcontroller</li>
+      </ul>`,
+        images: [
+            { url: 'assets/IMG_3590.jpeg', caption: 'Detection system and optional display reacting to drone audio.' },
+            { url: 'assets/IMG_3588.jpeg', caption: 'Fully assembled detection system with printed dish and electronics.' },
+            { url: 'assets/IMG_3592.png', caption: 'Solar panel power source for detection system.' },
+            { url: 'assets/IMG_3586.png', caption: 'Parabolic dish modeled in SolidWorks.' }
         ]
     }
 ];
@@ -533,7 +605,7 @@ window.addEventListener('hashchange', () => {
 });
 
 
-// ═══════════════════════════════
+// ═════════════════════���═════════
 // Project Cards
 // ═══════════════════════════════
 function createCard(proj, i) {
@@ -604,7 +676,7 @@ function openProject(proj, i) {
             }
         } else {
             item.innerHTML = `<div class="gallery-placeholder-inner">
-                <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.[...]
                 <span>${caption || 'Image ' + (idx + 1)}</span>
             </div>`;
         }
