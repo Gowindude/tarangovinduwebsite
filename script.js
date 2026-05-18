@@ -463,7 +463,6 @@ const detailHero = document.getElementById('detail-hero');
 const detailTitle = document.getElementById('detail-title');
 const detailSub = document.getElementById('detail-subtitle');
 const detailDesc = document.getElementById('detail-description');
-const detailPdf = document.getElementById('detail-pdf');
 const detailGallery = document.getElementById('detail-gallery');
 const detailBack = document.getElementById('detail-back');
 const hamburger = document.getElementById('nav-hamburger');
@@ -587,10 +586,6 @@ function openProject(proj, i) {
     detailDesc.innerHTML = proj.description;
 
     currentProject = proj;
-    detailPdf.onclick = (e) => {
-        e.preventDefault();
-        generateProjectPDF(currentProject);
-    };
 
     // Build gallery
     detailGallery.innerHTML = '';
@@ -687,68 +682,6 @@ lightbox.addEventListener('click', (e) => {
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
 });
-
-
-// ═══════════════════════════════
-// PDF Generation
-// ═══════════════════════════════
-function generateProjectPDF(proj) {
-    const container = document.createElement('div');
-    container.style.padding = '40px';
-    container.style.fontFamily = 'Inter, sans-serif';
-    container.style.color = '#1e293b';
-    container.style.background = '#ffffff';
-
-    // Inject explicit CSS to override website's dark-mode text colors for standard tags
-    container.innerHTML = `
-        <style>
-            .pdf-container { text-align: left; }
-            .pdf-container h3 { color: #1e3a8a !important; font-size: 1.25rem; margin-top: 24px; margin-bottom: 12px; page-break-after: avoid; }
-            .pdf-container h4 { color: #0f172a !important; font-size: 1.1rem; margin-top: 16px; margin-bottom: 8px; page-break-after: avoid; }
-            .pdf-container p { color: #475569 !important; line-height: 1.6; margin-bottom: 12px; }
-            .pdf-container ul, .pdf-container ol { color: #475569 !important; padding-left: 24px; margin-bottom: 16px; font-size: 14px; }
-            .pdf-container li { margin-bottom: 6px; }
-            .avoid-break { page-break-inside: avoid; display: block; width: 100%; margin-bottom: 40px; }
-        </style>
-        <div class="pdf-container">
-            <h1 style="color: #1e3a8a; margin-bottom: 5px; font-size: 28px;">${proj.title}</h1>
-            <p style="color: #0f172a; font-weight: 700; font-size: 16px; margin-bottom: 25px;">${proj.subtitle}</p>
-            <div style="font-size: 14px; line-height: 1.6; color: #334155; margin-bottom: 30px;">
-                ${proj.description}
-            </div>
-        </div>
-    `;
-
-    if (proj.images && proj.images.length > 0 && typeof proj.images[0] !== 'string') {
-        const imgSection = document.createElement('div');
-        imgSection.innerHTML = '<div class="html2pdf__page-break"></div><h2 style="color: #2563eb; font-size: 22px; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; margin-top: 20px; margin-bottom: 20px;">Project Images</h2>';
-
-        proj.images.forEach(img => {
-            const imgUrl = typeof img === 'object' ? img.url : img;
-            const caption = typeof img === 'object' ? img.caption : '';
-            if (!imgUrl) return;
-
-            imgSection.innerHTML += `
-                <div class="avoid-break" style="text-align: center;">
-                    <img src="${imgUrl}" style="max-width: 100%; max-height: 450px; object-fit: contain; border-radius: 8px; border: 1px solid #cbd5e1;" />
-                    ${caption ? `<div style="color: #0f172a; font-size: 13px; margin-top: 10px; font-weight: 600; font-style: italic;">${caption}</div>` : ''}
-                </div>
-            `;
-        });
-        container.appendChild(imgSection);
-    }
-
-    const opt = {
-        margin: [0.5, 0.5, 0.5, 0.5],
-        filename: `${proj.title.replace(/\s+/g, '_')}_Overview.pdf`,
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 1.2, useCORS: true, logging: false },
-        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
-        pagebreak: { mode: 'css', avoid: ['.avoid-break'] }
-    };
-
-    html2pdf().set(opt).from(container).save();
-}
 
 
 
