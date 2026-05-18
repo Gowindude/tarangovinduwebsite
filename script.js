@@ -365,6 +365,7 @@ const projects = [
       <h3>Link to Publication</h3>
       <p>Read the published version here: <br>
       <a href="https://nhsjs.com/2024/analysis-of-geometric-representations-used-to-simplify-spacetime-curvature-of-black-holes/" target="_blank" rel="noopener noreferrer" style="color: var(--col[...]
+        `,
         pdfUrl: '#',
         featured: false,
         images: []
@@ -605,7 +606,7 @@ window.addEventListener('hashchange', () => {
 });
 
 
-// ═════════════════════���═════════
+// ═══════════════════════════════
 // Project Cards
 // ═══════════════════════════════
 function createCard(proj, i) {
@@ -644,7 +645,7 @@ function renderProjects() {
 
 // ═══════════════════════════════
 // Project Detail (Full Page)
-// ═══════════════════════════════
+// ═══���═══════════════════════════
 let currentProject = null;
 
 function openProject(proj, i) {
@@ -676,7 +677,7 @@ function openProject(proj, i) {
             }
         } else {
             item.innerHTML = `<div class="gallery-placeholder-inner">
-                <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.[...]
+                <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/></svg>
                 <span>${caption || 'Image ' + (idx + 1)}</span>
             </div>`;
         }
@@ -726,7 +727,7 @@ function openProject(proj, i) {
 detailBack.addEventListener('click', () => switchPage('projects'));
 
 
-// ═══════════════════════════════
+// ═══════════════════��═══════════
 // Lightbox
 // ═══════════════════════════════
 const lightbox = document.getElementById('lightbox');
