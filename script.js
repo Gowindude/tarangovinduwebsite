@@ -81,11 +81,108 @@ window.addEventListener('scroll', () => {
 // ═══════════════════════════════
 const projects = [
     {
+        id: 'project-6',
+        title: 'Servo-Actuated Ball Valve Assembly',
+        subtitle: 'Propulsion Systems · Mechanical Design · SolidWorks',
+        thumbnail: 'assets/IMG_3584.png',
+        heroImage: 'assets/IMG_3584.png',
+        featured: true,
+        description: `
+      <h3>What?</h3>
+      <ul>
+        <li>Designed a custom servo-actuated ball valve assembly for the Propulsive Landers rocket club propulsion feed system</li>
+        <li>Replacing an existing ~5 lb electric motor actuator under a strict 5.5 lb total PFS mass budget</li>
+      </ul>
+      <h3>How?</h3>
+      <ul>
+        <li>Sized servo from first principles using torque requirements derived from valve geometry and flow conditions</li>
+        <li>Modeled three design iterations in SolidWorks, incorporating feedback from structures and propulsion leads</li>
+        <li>Managed full project lifecycle from constraints analysis through 3D printing and assembly</li>
+      </ul>
+      <h3>Results?</h3>
+      <ul>
+        <li>~85% mass reduction per actuator (~0.7 lb vs ~5 lb), saving ~16 lbs across all 4 PFS valves</li>
+        <li>Final configuration selected for implementation; hardware testing in progress</li>
+      </ul>`,
+        pdfUrl: '#',
+        images: [
+            { url: 'assets/IMG_3584.png', caption: 'Servo mount iteration with direct mounting to valve: custom stand and connection to valve.' },
+            { url: 'assets/IMG_3587.png', caption: 'Direct mounting iteration with servo using metal hardware.' },
+            { url: 'assets/IMG_3585.png', caption: 'Iteration using gears to reduce required torque from servo: custom gears, hex mount, and plates with metal adapters.' }
+        ]
+    },
+    {
+        id: 'project-7',
+        title: 'Acoustic Drone Detection System',
+        subtitle: 'Embedded Systems · Machine Learning · CAD · 36-Hour Hackathon',
+        thumbnail: 'assets/IMG_3588.jpeg',
+        heroImage: 'assets/IMG_3588.jpeg',
+        featured: true,
+        description: `
+      <h3>What?</h3>
+      <ul>
+        <li>Self-contained drone detection system built in under 36 hours for under $25 — no WiFi or external dependencies</li>
+        <li>Processes audio in real time and outputs a confidence score for drone presence</li>
+      </ul>
+      <h3>How?</h3>
+      <ul>
+        <li>Reverse-engineered a speaker as a microphone using acoustic reciprocity after no reliable mic was available</li>
+        <li>3D printed a mathematically calculated parabolic dish in SolidWorks to maximize signal capture</li>
+        <li>Trained a deep learning model on 20,000+ audio samples in Python; ported to C++ to run entirely on an ESP32 microcontroller</li>
+      </ul>
+      <h3>Results?</h3>
+      <ul>
+        <li>Over 80% classification accuracy, fully functional on-device with no external compute</li>
+        <li>Drone audio detected from 15–20 ft using a makeshift microphone</li>
+        <li>Full inference pipeline running on a single ESP32 microcontroller</li>
+      </ul>`,
+        pdfUrl: '#',
+        images: [
+            { url: 'assets/IMG_3590.jpeg', caption: 'Detection system and optional display reacting to drone audio.' },
+            { url: 'assets/IMG_3588.jpeg', caption: 'Fully assembled detection system with printed dish and electronics.' },
+            { url: 'assets/IMG_3592.png', caption: 'Solar panel power source for detection system.' },
+            { url: 'assets/IMG_3586.png', caption: 'Parabolic dish modeled in SolidWorks.' }
+        ]
+    },
+    {
+        id: 'project-3',
+        title: 'Conservation Surveillance Drone',
+        subtitle: 'Autonomous Systems · UAV Design & Integration',
+        thumbnail: 'assets/project-3/dronebuilt.jpg',
+        heroImage: 'assets/project-3/dronebuilt.jpg',
+        featured: true,
+        description: `
+      <h3>What?</h3>
+      <ul>
+        <li>Designed, built, and flight-tested a custom quadrotor for environmental monitoring</li>
+        <li>Full-stack build: frame design, propulsion selection, avionics integration, and flight controller tuning</li>
+      </ul>
+      <h3>How?</h3>
+      <ul>
+        <li>Designed a custom 3D-printable frame with truss-style arms optimized for stiffness-to-weight</li>
+        <li>Integrated full avionics stack including ESCs, ExpressLRS flight controller, and receiver; performed all soldering</li>
+        <li>Tuned flight controller through iterative test flights</li>
+      </ul>
+      <h3>Results?</h3>
+      <ul>
+        <li>Stable, repeatable flight achieved under manual and stabilized control modes</li>
+        <li>All mass, power, and structural constraints met within budget</li>
+        <li>Donation to local regional park for continued use</li>
+      </ul>`,
+        pdfUrl: '#',
+        images: [
+            { url: 'assets/project-3/dronebuilt.jpg', caption: 'Completed drone configured for conservation surveillance, featuring integrated propulsion, avionics stack, and camera system for environmental monitoring' },
+            { url: 'assets/project-3/droneframeCAD.png', caption: 'Drone frame CAD model in SolidWorks' },
+            { url: 'assets/project-3/droneframePrint.png', caption: 'Drone parts layout for 3D printing' }
+        ]
+    },
+    {
         id: 'project-1',
         title: 'Model Rocket',
         subtitle: 'Flight Dynamics · Simulation · Rapid Prototyping · Experimental Validation',
         thumbnail: 'assets/project-1/rocketpostlaunch.jpg',
         heroImage: 'assets/project-1/openrocketsim.png',
+        featured: true,
         description: `
       <h3>What?</h3>
       <ul>
@@ -106,7 +203,6 @@ const projects = [
         <li>Co-authored a full technical design report</li>
       </ul>`,
         pdfUrl: '#',
-        featured: true,
         images: [
             { url: 'assets/project-1/openrocketsim.png', caption: 'OpenRocket simulation of rocket' },
             { url: 'assets/project-1/solidworkspayloadbay.png', caption: 'CAD models of payload bay, nose cone, fin holder' },
@@ -123,6 +219,7 @@ const projects = [
         subtitle: 'Aerodynamics · Flight Vehicle Design',
         thumbnail: 'assets/project-2/early design.png',
         heroImage: 'assets/project-2/early design.png',
+        featured: true,
         description: `
       <h3>What?</h3>
       <ul>
@@ -142,7 +239,6 @@ const projects = [
         <li>Co-authored a full technical design report</li>
       </ul>`,
         pdfUrl: '#',
-        featured: true,
         images: [
             { url: 'assets/project-2/early design.png', caption: 'Markings and rubber band to test position and alignment of wing' },
             { url: 'assets/project-2/center of gravity testing.png', caption: 'Tape repairs after test flights, ensuring consistent results' },
@@ -152,43 +248,12 @@ const projects = [
         ]
     },
     {
-        id: 'project-3',
-        title: 'Conservation Surveillance Drone',
-        subtitle: 'Autonomous Systems · UAV Design & Integration',
-        thumbnail: 'assets/project-3/dronebuilt.jpg',
-        heroImage: 'assets/project-3/dronebuilt.jpg',
-        description: `
-      <h3>What?</h3>
-      <ul>
-        <li>Designed, built, and flight-tested a custom quadrotor for environmental monitoring</li>
-        <li>Full-stack build: frame design, propulsion selection, avionics integration, and flight controller tuning</li>
-      </ul>
-      <h3>How?</h3>
-      <ul>
-        <li>Designed a custom 3D-printable frame with truss-style arms optimized for stiffness-to-weight</li>
-        <li>Integrated full avionics stack including ESCs, ExpressLRS flight controller, and receiver; performed all soldering</li>
-        <li>Tuned flight controller through iterative test flights</li>
-      </ul>
-      <h3>Results?</h3>
-      <ul>
-        <li>Stable, repeatable flight achieved under manual and stabilized control modes</li>
-        <li>All mass, power, and structural constraints met within budget</li>
-        <li>Donation to local regional park for continued use</li>
-      </ul>`,
-        pdfUrl: '#',
-        featured: true,
-        images: [
-            { url: 'assets/project-3/dronebuilt.jpg', caption: 'Completed drone configured for conservation surveillance, featuring integrated propulsion, avionics stack, and camera system for environmental monitoring' },
-            { url: 'assets/project-3/droneframeCAD.png', caption: 'Drone frame CAD model in SolidWorks' },
-            { url: 'assets/project-3/droneframePrint.png', caption: 'Drone parts layout for 3D printing' }
-        ]
-    },
-    {
         id: 'project-4',
         title: 'Published Research Paper: Visually Representing Black Holes',
         subtitle: 'Physics Research · Theoretical Relativity & Science Communication',
         thumbnail: 'assets/project-4/Penrose DIagram.png',
         heroImage: 'assets/project-4/Penrose DIagram.png',
+        featured: false,
         description: `
       <h3>What?</h3>
       <ul>
@@ -208,7 +273,6 @@ const projects = [
         <li>Read it here: <a href="https://nhsjs.com/2024/analysis-of-geometric-representations-used-to-simplify-spacetime-curvature-of-black-holes/" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent-light); text-decoration: underline;">The National High School Journal of Science</a></li>
       </ul>`,
         pdfUrl: '#',
-        featured: false,
         images: []
     },
     {
@@ -217,6 +281,7 @@ const projects = [
         subtitle: 'Community Infrastructure · Structural Redesign · Project Leadership',
         thumbnail: 'assets/project-5/eagle final.png',
         heroImage: 'assets/project-5/eagle final.png',
+        featured: true,
         description: `
       <h3>What?</h3>
       <ul>
@@ -235,7 +300,6 @@ const projects = [
         <li>Completed on budget with all structural, alignment, and finish requirements met</li>
       </ul>`,
         pdfUrl: '#',
-        featured: true,
         images: [
             { url: 'assets/project-5/eaglebeforevsafter.png', caption: 'Front-facing comparison showing restored hour markings, reinforced support structure, and reinforcement for long-term outdoor durability.' },
             { url: 'assets/project-5/eagle final.png', caption: 'Completed sundial installation following full structural restoration and repainting.' }
